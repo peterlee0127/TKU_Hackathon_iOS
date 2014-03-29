@@ -51,7 +51,7 @@
     UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithTitle:@"Show" style:UIBarButtonItemStylePlain target:self action:@selector(showMenu)];
     self.navigationItem.leftBarButtonItem = anotherButton;
     
-    self.title = @"提問(未連線)";
+    self.title = @"提問(連線中)";
     
     self.messageInputView.textView.placeHolder = @"請在此輸入訊息";
     
@@ -59,7 +59,7 @@
  
 
     self.avatars = [[NSDictionary alloc] initWithObjectsAndKeys:
-                    [JSAvatarImageFactory avatarImageNamed:@"avatar-placeholder" croppedToCircle:YES], userName,
+                    [JSAvatarImageFactory avatarImageNamed:@"avatar-placeholder" croppedToCircle:YES], @"user",
                     nil];
     
     UIBarButtonItem *rightButton= [[UIBarButtonItem alloc] initWithTitle:@"to All" style:UIBarButtonItemStylePlain target:self action:@selector(changeTarget:)];
@@ -67,6 +67,8 @@
     target =@"All";
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(SocketIsConnect:) name:kWebSocketIsConnect object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadMessageTable) name:@"receiveMessage" object:nil];
     // Do any additional setup after loading the view from its nib.
     
     if(!webSocket.socketIO.isConnected)
@@ -95,7 +97,11 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:kShowMenuViewController object:nil];
     
 }
-
+-(void) reloadMessageTable
+{
+    [self finishSend];
+    [self scrollToBottomAnimated:YES];
+}
 -(void) changeTarget :(UIBarButtonItem *) sender
 {
     if([sender.title isEqualToString:@"to All"])
@@ -253,7 +259,7 @@
 
 - (UIImageView *)avatarImageViewForRowAtIndexPath:(NSIndexPath *)indexPath sender:(NSString *)sender
 {
-    UIImage *image = [self.avatars objectForKey:sender];
+    UIImage *image = [self.avatars objectForKey:@"user"];
     return [[UIImageView alloc] initWithImage:image];
 }
 @end

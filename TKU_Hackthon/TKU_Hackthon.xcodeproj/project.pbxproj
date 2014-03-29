@@ -46,6 +46,8 @@
 		D0D4EC6E18E6C4E300F2D2F0 /* TK_CurrentLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0D4EC6C18E6C4E300F2D2F0 /* TK_CurrentLocationViewController.xib */; };
 		D0D4EC7218E6D7D400F2D2F0 /* TK_ActAsBeaconViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D4EC7018E6D7D400F2D2F0 /* TK_ActAsBeaconViewController.m */; };
 		D0D4EC7318E6D7D400F2D2F0 /* TK_ActAsBeaconViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0D4EC7118E6D7D400F2D2F0 /* TK_ActAsBeaconViewController.xib */; };
+		D0D4EC7718E6F0D100F2D2F0 /* TK_ReqVoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D4EC7518E6F0D100F2D2F0 /* TK_ReqVoteViewController.m */; };
+		D0D4EC7818E6F0D100F2D2F0 /* TK_ReqVoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0D4EC7618E6F0D100F2D2F0 /* TK_ReqVoteViewController.xib */; };
 		D0D96D6218E65EF40084DFF5 /* TK_BLEModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D96D6118E65EF40084DFF5 /* TK_BLEModel.m */; };
 		D0D96D6518E65F1A0084DFF5 /* TK_WebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D96D6418E65F1A0084DFF5 /* TK_WebSocket.m */; };
 /* End PBXBuildFile section */
@@ -116,6 +118,9 @@
 		D0D4EC6F18E6D7D400F2D2F0 /* TK_ActAsBeaconViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_ActAsBeaconViewController.h; sourceTree = "<group>"; };
 		D0D4EC7018E6D7D400F2D2F0 /* TK_ActAsBeaconViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_ActAsBeaconViewController.m; sourceTree = "<group>"; };
 		D0D4EC7118E6D7D400F2D2F0 /* TK_ActAsBeaconViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TK_ActAsBeaconViewController.xib; sourceTree = "<group>"; };
+		D0D4EC7418E6F0D100F2D2F0 /* TK_ReqVoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_ReqVoteViewController.h; sourceTree = "<group>"; };
+		D0D4EC7518E6F0D100F2D2F0 /* TK_ReqVoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_ReqVoteViewController.m; sourceTree = "<group>"; };
+		D0D4EC7618E6F0D100F2D2F0 /* TK_ReqVoteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TK_ReqVoteViewController.xib; sourceTree = "<group>"; };
 		D0D96D6018E65EF40084DFF5 /* TK_BLEModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_BLEModel.h; sourceTree = "<group>"; };
 		D0D96D6118E65EF40084DFF5 /* TK_BLEModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_BLEModel.m; sourceTree = "<group>"; };
 		D0D96D6318E65F1A0084DFF5 /* TK_WebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_WebSocket.h; sourceTree = "<group>"; };
@@ -306,6 +311,9 @@
 				D0D4EC6F18E6D7D400F2D2F0 /* TK_ActAsBeaconViewController.h */,
 				D0D4EC7018E6D7D400F2D2F0 /* TK_ActAsBeaconViewController.m */,
 				D0D4EC7118E6D7D400F2D2F0 /* TK_ActAsBeaconViewController.xib */,
+				D0D4EC7418E6F0D100F2D2F0 /* TK_ReqVoteViewController.h */,
+				D0D4EC7518E6F0D100F2D2F0 /* TK_ReqVoteViewController.m */,
+				D0D4EC7618E6F0D100F2D2F0 /* TK_ReqVoteViewController.xib */,
 			);
 			name = AdminOnly;
 			sourceTree = "<group>";
@@ -406,6 +414,7 @@
 				D0D4EC6E18E6C4E300F2D2F0 /* TK_CurrentLocationViewController.xib in Resources */,
 				D07CFC9D18E65E48000E45F7 /* Images.xcassets in Resources */,
 				D03CE83118E664DE007372AC /* TK_UserCourseViewController.xib in Resources */,
+				D0D4EC7818E6F0D100F2D2F0 /* TK_ReqVoteViewController.xib in Resources */,
 				D03CE83C18E671BF007372AC /* TK_LoginViewController.xib in Resources */,
 				D07CFC8F18E65E48000E45F7 /* InfoPlist.strings in Resources */,
 				D031B94F18E6924F00E1B14A /* TK_CommentViewController.xib in Resources */,
@@ -466,6 +475,7 @@
 				D03CE82118E661F8007372AC /* SocketIOTransportWebsocket.m in Sources */,
 				D0D96D6218E65EF40084DFF5 /* TK_BLEModel.m in Sources */,
 				D03CE83718E66C5E007372AC /* TK_PlistModel.m in Sources */,
+				D0D4EC7718E6F0D100F2D2F0 /* TK_ReqVoteViewController.m in Sources */,
 				D0D4EC6D18E6C4E300F2D2F0 /* TK_CurrentLocationViewController.m in Sources */,
 				D03CE82018E661F8007372AC /* SocketIOPacket.m in Sources */,
 				D031B95218E6A1CC00E1B14A /* TK_APIModel.m in Sources */,

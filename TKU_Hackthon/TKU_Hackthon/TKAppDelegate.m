@@ -71,7 +71,7 @@
         }
         case 1:
         {
-            [self checkUserIsInClass];
+//            [self checkUserIsInClass];
             TK_CommentViewController *frontVC=[[TK_CommentViewController alloc] initWithNibName:@"TK_CommentViewController" bundle:nil];
             self.navVC =[[UINavigationController alloc] initWithRootViewController:frontVC];
             break;
@@ -109,7 +109,7 @@
                 }
                 case 1:
                 {
-                    [self checkUserIsInClass];
+//                    [self checkUserIsInClass];
                     TK_CommentViewController *frontVC=[[TK_CommentViewController alloc] initWithNibName:@"TK_CommentViewController" bundle:nil];
                     self.navVC =[[UINavigationController alloc] initWithRootViewController:frontVC];
                     break;
