@@ -51,7 +51,7 @@
       [UIFont fontWithName:defaultFont size:23],
       UITextAttributeFont,
       nil]];
-    
+    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     // Do any additional setup after loading the view.
 }
 -(void) showMenu
@@ -59,7 +59,6 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:kShowMenuViewController object:nil];
 
 }
-
 
 /*
 #pragma mark - Navigation

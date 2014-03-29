@@ -26,6 +26,8 @@
 		D03CE83118E664DE007372AC /* TK_FrontViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D03CE82F18E664DE007372AC /* TK_FrontViewController.xib */; };
 		D03CE83418E66AB6007372AC /* TK_TopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D03CE83318E66AB6007372AC /* TK_TopViewController.m */; };
 		D03CE83718E66C5E007372AC /* TK_PlistModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D03CE83618E66C5E007372AC /* TK_PlistModel.m */; };
+		D03CE83B18E671BF007372AC /* TK_LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D03CE83918E671BF007372AC /* TK_LoginViewController.m */; };
+		D03CE83C18E671BF007372AC /* TK_LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D03CE83A18E671BF007372AC /* TK_LoginViewController.xib */; };
 		D07CFC8518E65E48000E45F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D07CFC8418E65E48000E45F7 /* Foundation.framework */; };
 		D07CFC8718E65E48000E45F7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D07CFC8618E65E48000E45F7 /* CoreGraphics.framework */; };
 		D07CFC8918E65E48000E45F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D07CFC8818E65E48000E45F7 /* UIKit.framework */; };
@@ -71,6 +73,9 @@
 		D03CE83318E66AB6007372AC /* TK_TopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_TopViewController.m; sourceTree = "<group>"; };
 		D03CE83518E66C5E007372AC /* TK_PlistModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_PlistModel.h; sourceTree = "<group>"; };
 		D03CE83618E66C5E007372AC /* TK_PlistModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_PlistModel.m; sourceTree = "<group>"; };
+		D03CE83818E671BF007372AC /* TK_LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_LoginViewController.h; sourceTree = "<group>"; };
+		D03CE83918E671BF007372AC /* TK_LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_LoginViewController.m; sourceTree = "<group>"; };
+		D03CE83A18E671BF007372AC /* TK_LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TK_LoginViewController.xib; sourceTree = "<group>"; };
 		D07CFC8118E65E48000E45F7 /* TKU_Hackthon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TKU_Hackthon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D07CFC8418E65E48000E45F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D07CFC8618E65E48000E45F7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -116,6 +121,9 @@
 				D03CE82D18E664DE007372AC /* TK_FrontViewController.h */,
 				D03CE82E18E664DE007372AC /* TK_FrontViewController.m */,
 				D03CE82F18E664DE007372AC /* TK_FrontViewController.xib */,
+				D03CE83818E671BF007372AC /* TK_LoginViewController.h */,
+				D03CE83918E671BF007372AC /* TK_LoginViewController.m */,
+				D03CE83A18E671BF007372AC /* TK_LoginViewController.xib */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -274,6 +282,15 @@
 				CLASSPREFIX = TK_;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Peterlee;
+				TargetAttributes = {
+					D07CFC8018E65E48000E45F7 = {
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+				};
 			};
 			buildConfigurationList = D07CFC7C18E65E48000E45F7 /* Build configuration list for PBXProject "TKU_Hackthon" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -301,6 +318,7 @@
 				D03CE80618E66182007372AC /* TK_MenuViewController.xib in Resources */,
 				D07CFC9D18E65E48000E45F7 /* Images.xcassets in Resources */,
 				D03CE83118E664DE007372AC /* TK_FrontViewController.xib in Resources */,
+				D03CE83C18E671BF007372AC /* TK_LoginViewController.xib in Resources */,
 				D07CFC8F18E65E48000E45F7 /* InfoPlist.strings in Resources */,
 				D03CE82C18E6642C007372AC /* TK_MenuTableViewCell.xib in Resources */,
 			);
@@ -347,6 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D03CE82218E661F8007372AC /* SocketIOTransportXHR.m in Sources */,
+				D03CE83B18E671BF007372AC /* TK_LoginViewController.m in Sources */,
 				D03CE83418E66AB6007372AC /* TK_TopViewController.m in Sources */,
 				D0D96D6518E65F1A0084DFF5 /* TK_WebSocket.m in Sources */,
 				D07CFC9118E65E48000E45F7 /* main.m in Sources */,

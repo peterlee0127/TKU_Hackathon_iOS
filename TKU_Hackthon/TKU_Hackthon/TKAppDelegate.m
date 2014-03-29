@@ -7,44 +7,72 @@
 //
 
 #import "TKAppDelegate.h"
+#import "TK_PlistModel.h"
+
+#import "TK_LoginViewController.h"
 #import "TK_FrontViewController.h"
 
 @implementation TKAppDelegate
-
+{
+    TK_PlistModel *plistModel;
+}
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.365 green:0.314 blue:0.294 alpha:1.000]];
-    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-    
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showMenu) name:@"kShowMenuViewController" object:nil];
+    [self setNavigtionAppearAndKVO];
     
     self.window =[[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
+    plistModel = [TK_PlistModel shareInstance];
+    if(![plistModel loadUserInfo])
+    {
+        // already login
+        [self showRevalViewController];
+    }
+    else
+    {
+        
+        TK_LoginViewController *loginVC =[[TK_LoginViewController alloc] initWithNibName:@"TK_LoginViewController" bundle:nil];
+        self.navVC = [[UINavigationController alloc] initWithRootViewController:loginVC];
+        self.window.rootViewController =self.navVC;
+    }
     
-   self.menuViewController =[[TK_MenuViewController alloc] initWithNibName:@"TK_MenuViewController" bundle:nil];
     
-    TK_FrontViewController *frontVC=[[TK_FrontViewController alloc] initWithNibName:@"TK_FrontViewController" bundle:nil];
-    
-    self.navVC =[[UINavigationController alloc] initWithRootViewController:frontVC];
-    
-    
-    self.revealViewController =[PKRevealController revealControllerWithFrontViewController:self.navVC leftViewController:self.menuViewController];
-    
-
-    self.window.rootViewController = self.revealViewController;
+ 
     [self.window makeKeyAndVisible];
     
     
     return YES;
 }
+-(void) setNavigtionAppearAndKVO
+{
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.365 green:0.314 blue:0.294 alpha:1.000]];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showMenu) name:@"kShowMenuViewController" object:nil];
+}
 -(void) changeViewController :(NSNotification *) noti
 {
-
+    NSNumber * number = [noti object];
     
     
     
+    
+    
+}
+-(void) showRevalViewController
+{
+    self.menuViewController =[[TK_MenuViewController alloc] initWithNibName:@"TK_MenuViewController" bundle:nil];
+    
+    TK_FrontViewController *frontVC=[[TK_FrontViewController alloc] initWithNibName:@"TK_FrontViewController" bundle:nil];
+    
+    self.navVC =[[UINavigationController alloc] initWithRootViewController:frontVC];
+    
+    self.revealViewController =[PKRevealController revealControllerWithFrontViewController:self.navVC leftViewController:self.menuViewController];
+    
+    
+    self.window.rootViewController = self.revealViewController;
 }
 -(void) showMenu
 {

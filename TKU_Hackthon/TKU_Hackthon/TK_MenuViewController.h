@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TK_TopViewController.h"
 
-@interface TK_MenuViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
+@interface TK_MenuViewController : TK_TopViewController  <UITableViewDataSource,UITableViewDelegate>
 
 
 @property (nonatomic,strong) UITableView *tableView;

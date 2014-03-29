@@ -10,9 +10,12 @@
 
 @interface TK_PlistModel : NSObject
 
+@property (nonatomic,strong) NSMutableDictionary *plistDict;
 
 
-
++(instancetype) shareInstance;
+-(void) saveUserInfo:(NSString *) stu_id andPass:(NSString *) password;
+-(NSDictionary *) loadUserInfo;
 
 
 

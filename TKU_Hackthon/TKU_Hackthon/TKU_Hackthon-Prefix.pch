@@ -20,3 +20,7 @@ static  NSString * const  defaultSever = @"localhost";
 static  NSString * const defaultPort = @"8080";
 static  NSString * const kShowMenuViewController = @"kShowMenuViewController";
 static  NSString * const defaultFont = @"Helvetica-Light";
+
+static NSString * const kstu_id = @"stu_id";
+static NSString * const kpassword = @"password";
+static NSString * const kUserIsAdmin = @"kUserIsAdmin";
