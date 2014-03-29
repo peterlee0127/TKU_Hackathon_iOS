@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4309242240AE40A489CD2C1E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B04B74A2104459B1953A32 /* libPods.a */; };
 		D031B94218E67A7C00E1B14A /* PLHUDView.m in Sources */ = {isa = PBXBuildFile; fileRef = D031B94118E67A7C00E1B14A /* PLHUDView.m */; };
+		D031B94718E689A900E1B14A /* TK_UserCourseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D031B94618E689A900E1B14A /* TK_UserCourseCollectionViewCell.m */; };
+		D031B94918E689C000E1B14A /* TK_UserCourseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D031B94818E689C000E1B14A /* TK_UserCourseCollectionViewCell.xib */; };
 		D03CE80518E66182007372AC /* TK_MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D03CE80318E66182007372AC /* TK_MenuViewController.m */; };
 		D03CE80618E66182007372AC /* TK_MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D03CE80418E66182007372AC /* TK_MenuViewController.xib */; };
 		D03CE80C18E661AD007372AC /* HTMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D03CE80918E661AD007372AC /* HTMLNode.m */; };
@@ -23,8 +25,8 @@
 		D03CE82618E6625A007372AC /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D03CE82518E6625A007372AC /* libxml2.2.dylib */; };
 		D03CE82B18E6642C007372AC /* TK_MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D03CE82918E6642C007372AC /* TK_MenuTableViewCell.m */; };
 		D03CE82C18E6642C007372AC /* TK_MenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D03CE82A18E6642C007372AC /* TK_MenuTableViewCell.xib */; };
-		D03CE83018E664DE007372AC /* TK_FrontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D03CE82E18E664DE007372AC /* TK_FrontViewController.m */; };
-		D03CE83118E664DE007372AC /* TK_FrontViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D03CE82F18E664DE007372AC /* TK_FrontViewController.xib */; };
+		D03CE83018E664DE007372AC /* TK_UserCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D03CE82E18E664DE007372AC /* TK_UserCourseViewController.m */; };
+		D03CE83118E664DE007372AC /* TK_UserCourseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D03CE82F18E664DE007372AC /* TK_UserCourseViewController.xib */; };
 		D03CE83418E66AB6007372AC /* TK_TopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D03CE83318E66AB6007372AC /* TK_TopViewController.m */; };
 		D03CE83718E66C5E007372AC /* TK_PlistModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D03CE83618E66C5E007372AC /* TK_PlistModel.m */; };
 		D03CE83B18E671BF007372AC /* TK_LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D03CE83918E671BF007372AC /* TK_LoginViewController.m */; };
@@ -44,6 +46,9 @@
 		A49FA5AEE6A146CD8D224B41 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		D031B94018E67A7C00E1B14A /* PLHUDView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLHUDView.h; sourceTree = "<group>"; };
 		D031B94118E67A7C00E1B14A /* PLHUDView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLHUDView.m; sourceTree = "<group>"; };
+		D031B94518E689A900E1B14A /* TK_UserCourseCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_UserCourseCollectionViewCell.h; sourceTree = "<group>"; };
+		D031B94618E689A900E1B14A /* TK_UserCourseCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_UserCourseCollectionViewCell.m; sourceTree = "<group>"; };
+		D031B94818E689C000E1B14A /* TK_UserCourseCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TK_UserCourseCollectionViewCell.xib; sourceTree = "<group>"; };
 		D03CE80218E66182007372AC /* TK_MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_MenuViewController.h; sourceTree = "<group>"; };
 		D03CE80318E66182007372AC /* TK_MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_MenuViewController.m; sourceTree = "<group>"; };
 		D03CE80418E66182007372AC /* TK_MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TK_MenuViewController.xib; sourceTree = "<group>"; };
@@ -69,9 +74,9 @@
 		D03CE82818E6642C007372AC /* TK_MenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_MenuTableViewCell.h; sourceTree = "<group>"; };
 		D03CE82918E6642C007372AC /* TK_MenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_MenuTableViewCell.m; sourceTree = "<group>"; };
 		D03CE82A18E6642C007372AC /* TK_MenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TK_MenuTableViewCell.xib; sourceTree = "<group>"; };
-		D03CE82D18E664DE007372AC /* TK_FrontViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_FrontViewController.h; sourceTree = "<group>"; };
-		D03CE82E18E664DE007372AC /* TK_FrontViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_FrontViewController.m; sourceTree = "<group>"; };
-		D03CE82F18E664DE007372AC /* TK_FrontViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TK_FrontViewController.xib; sourceTree = "<group>"; };
+		D03CE82D18E664DE007372AC /* TK_UserCourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_UserCourseViewController.h; sourceTree = "<group>"; };
+		D03CE82E18E664DE007372AC /* TK_UserCourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_UserCourseViewController.m; sourceTree = "<group>"; };
+		D03CE82F18E664DE007372AC /* TK_UserCourseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TK_UserCourseViewController.xib; sourceTree = "<group>"; };
 		D03CE83218E66AB6007372AC /* TK_TopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_TopViewController.h; sourceTree = "<group>"; };
 		D03CE83318E66AB6007372AC /* TK_TopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_TopViewController.m; sourceTree = "<group>"; };
 		D03CE83518E66C5E007372AC /* TK_PlistModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_PlistModel.h; sourceTree = "<group>"; };
@@ -124,15 +129,26 @@
 			name = PLHudView;
 			sourceTree = "<group>";
 		};
+		D031B94418E6897C00E1B14A /* UserCourse */ = {
+			isa = PBXGroup;
+			children = (
+				D03CE82D18E664DE007372AC /* TK_UserCourseViewController.h */,
+				D03CE82E18E664DE007372AC /* TK_UserCourseViewController.m */,
+				D03CE82F18E664DE007372AC /* TK_UserCourseViewController.xib */,
+				D031B94518E689A900E1B14A /* TK_UserCourseCollectionViewCell.h */,
+				D031B94618E689A900E1B14A /* TK_UserCourseCollectionViewCell.m */,
+				D031B94818E689C000E1B14A /* TK_UserCourseCollectionViewCell.xib */,
+			);
+			name = UserCourse;
+			sourceTree = "<group>";
+		};
 		D03CE80118E6616A007372AC /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				D03CE82718E66412007372AC /* Menu */,
+				D031B94418E6897C00E1B14A /* UserCourse */,
 				D03CE83218E66AB6007372AC /* TK_TopViewController.h */,
 				D03CE83318E66AB6007372AC /* TK_TopViewController.m */,
-				D03CE82718E66412007372AC /* Menu */,
-				D03CE82D18E664DE007372AC /* TK_FrontViewController.h */,
-				D03CE82E18E664DE007372AC /* TK_FrontViewController.m */,
-				D03CE82F18E664DE007372AC /* TK_FrontViewController.xib */,
 				D03CE83818E671BF007372AC /* TK_LoginViewController.h */,
 				D03CE83918E671BF007372AC /* TK_LoginViewController.m */,
 				D03CE83A18E671BF007372AC /* TK_LoginViewController.xib */,
@@ -330,9 +346,10 @@
 			files = (
 				D03CE80618E66182007372AC /* TK_MenuViewController.xib in Resources */,
 				D07CFC9D18E65E48000E45F7 /* Images.xcassets in Resources */,
-				D03CE83118E664DE007372AC /* TK_FrontViewController.xib in Resources */,
+				D03CE83118E664DE007372AC /* TK_UserCourseViewController.xib in Resources */,
 				D03CE83C18E671BF007372AC /* TK_LoginViewController.xib in Resources */,
 				D07CFC8F18E65E48000E45F7 /* InfoPlist.strings in Resources */,
+				D031B94918E689C000E1B14A /* TK_UserCourseCollectionViewCell.xib in Resources */,
 				D03CE82C18E6642C007372AC /* TK_MenuTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,8 +407,9 @@
 				D03CE83718E66C5E007372AC /* TK_PlistModel.m in Sources */,
 				D03CE82018E661F8007372AC /* SocketIOPacket.m in Sources */,
 				D07CFC9518E65E48000E45F7 /* TKAppDelegate.m in Sources */,
-				D03CE83018E664DE007372AC /* TK_FrontViewController.m in Sources */,
+				D03CE83018E664DE007372AC /* TK_UserCourseViewController.m in Sources */,
 				D031B94218E67A7C00E1B14A /* PLHUDView.m in Sources */,
+				D031B94718E689A900E1B14A /* TK_UserCourseCollectionViewCell.m in Sources */,
 				D03CE80D18E661AD007372AC /* HTMLParser.m in Sources */,
 				D03CE81F18E661F8007372AC /* SocketIOJSONSerialization.m in Sources */,
 				D03CE80518E66182007372AC /* TK_MenuViewController.m in Sources */,

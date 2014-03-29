@@ -10,7 +10,7 @@
 #import "TK_PlistModel.h"
 
 #import "TK_LoginViewController.h"
-#import "TK_FrontViewController.h"
+#import "TK_UserCourseViewController.h"
 
 @implementation TKAppDelegate
 {
@@ -24,7 +24,7 @@
     self.window =[[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
     plistModel = [TK_PlistModel shareInstance];
-    if(![plistModel loadUserInfo])
+    if([plistModel loadUserCourse].count>0)
     {
         // already login
         [self showRevalViewController];
@@ -50,6 +50,7 @@
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showRevalViewController) name:@"kLoginSuccess" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showMenu) name:@"kShowMenuViewController" object:nil];
 }
 -(void) changeViewController :(NSNotification *) noti
@@ -65,7 +66,7 @@
 {
     self.menuViewController =[[TK_MenuViewController alloc] initWithNibName:@"TK_MenuViewController" bundle:nil];
     
-    TK_FrontViewController *frontVC=[[TK_FrontViewController alloc] initWithNibName:@"TK_FrontViewController" bundle:nil];
+    TK_UserCourseViewController *frontVC=[[TK_UserCourseViewController alloc] initWithNibName:@"TK_UserCourseViewController" bundle:nil];
     
     self.navVC =[[UINavigationController alloc] initWithRootViewController:frontVC];
     

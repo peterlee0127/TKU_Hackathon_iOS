@@ -17,7 +17,7 @@
 
 
 static  NSString * const  defaultSever = @"localhost";
-static  NSString * const defaultPort = @"8080";
+static  NSString * const defaultPort = @"3000";
 static  NSString * const kShowMenuViewController = @"kShowMenuViewController";
 static  NSString * const defaultFont = @"Helvetica-Light";
 

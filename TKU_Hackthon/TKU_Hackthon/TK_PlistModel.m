@@ -55,6 +55,8 @@
     
     self.plistDict[kstu_id] = stu_id;
     self.plistDict[kpassword] = password;
+    
+    [self saveToPlist];
 }
 -(NSDictionary *) loadUserInfo
 {
@@ -71,6 +73,7 @@
 -(void) saveUserCourse :(NSArray *) courseArray
 {
     self.plistDict[kUserCourse] = courseArray;
+     [self saveToPlist];
 }
 -(NSArray *) loadUserCourse
 {

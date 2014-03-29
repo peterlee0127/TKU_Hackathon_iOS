@@ -11,7 +11,9 @@
 #import "PLHUDView.h"
 
 @interface TK_LoginViewController ()
-
+{
+    TK_PlistModel *plistModel;
+}
 @end
 
 @implementation TK_LoginViewController
@@ -28,6 +30,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    plistModel =[TK_PlistModel shareInstance];
+    NSDictionary *userDict =[plistModel loadUserInfo];
+    self.accountTextField.text=userDict[kstu_id];
+    self.passwordTextField.text = userDict[kpassword];
+    
+    
     [self.loginButton addTarget:self action:@selector(login) forControlEvents:UIControlEventTouchDown];
     // Do any additional setup after loading the view from its nib.
 }
@@ -47,7 +55,7 @@
         return;
     }
     
-    TK_PlistModel *plistModel =[TK_PlistModel shareInstance];
+
     [plistModel saveUserInfo:self.accountTextField.text andPass:self.passwordTextField.text];
     PLHUDView *hud =[[PLHUDView alloc]initHUDWithType:HUDActivityIndicatorType];
     [hud setHUDTitle:@"登入中"];
@@ -73,9 +81,13 @@
         {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [hud hideHUD];
+                [plistModel  saveUserCourse:data];
+                 [[NSNotificationCenter defaultCenter] postNotificationName:@"kLoginSuccess" object:nil];
             });
 
         }
+        
+       
         
         NSLog(@"data:%@",data);
         
