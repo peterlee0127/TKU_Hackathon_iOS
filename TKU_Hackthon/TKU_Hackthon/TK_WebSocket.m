@@ -23,7 +23,27 @@
 -(void) connectToServer
 {
     self.socketIO =[[SocketIO alloc] initWithDelegate:self];
-    [self.socketIO connectToHost:defaultSever onPort:defaultPort];
+    [self.socketIO connectToHost:defaultSever onPort:[defaultPort integerValue]];
+}
+- (void) socketIODidConnect:(SocketIO *)socket
+{
+    
+}
+- (void) socketIODidDisconnect:(SocketIO *)socket disconnectedWithError:(NSError *)error
+{
+    
+}
+- (void) socketIO:(SocketIO *)socket didReceiveEvent:(SocketIOPacket *)packet
+{
+
+}
+- (void) socketIO:(SocketIO *)socket didSendMessage:(SocketIOPacket *)packet
+{
+
+}
+- (void) socketIO:(SocketIO *)socket onError:(NSError *)error
+{
+
 }
 
 

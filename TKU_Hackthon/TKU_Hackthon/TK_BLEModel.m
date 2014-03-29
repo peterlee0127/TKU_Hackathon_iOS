@@ -27,10 +27,18 @@
     
         self.locationManager = [[CLLocationManager alloc] init];
         self.locationManager.delegate=self;
+        [self.locationManager startUpdatingLocation];
         self.beaconArray =[[NSMutableArray alloc] init];
     }
     return self;
 }
-
+-(void) addBeacon:(CLBeacon *) beacon
+{
+    
+}
+-(NSArray *) allBeacon
+{
+    return self.beaconArray;
+}
 
 @end

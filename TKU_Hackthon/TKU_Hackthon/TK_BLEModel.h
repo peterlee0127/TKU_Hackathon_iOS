@@ -17,7 +17,8 @@
 
 
 +(instancetype) shareInstance;
-
+-(void) addBeacon:(CLBeacon *) beacon;
+-(NSArray *) allBeacon;
 
 
 @end
