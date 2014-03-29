@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
+#import "TK_APIModel.h"
 
-@interface TK_BLEModel : NSObject <CLLocationManagerDelegate>
+@interface TK_BLEModel : NSObject <CLLocationManagerDelegate,TK_APIDelegate>
 
 
 @property (nonatomic,strong) CLLocationManager *locationManager;
@@ -17,7 +18,7 @@
 
 
 +(instancetype) shareInstance;
--(void) addBeacon:(CLBeacon *) beacon;
+-(void) addBeacon:(CLBeaconRegion *) beaconRegion;
 -(NSArray *) allBeacon;
 
 

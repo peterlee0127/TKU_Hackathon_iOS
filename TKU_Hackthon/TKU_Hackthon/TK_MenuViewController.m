@@ -44,9 +44,9 @@
     
         self.menuImageArray = [NSArray arrayWithObjects:@"",@"",@"",@"",@"", nil];
     }
-    self.tableView =[[UITableView alloc] initWithFrame:CGRectMake(0, 30, self.view.frame.size.width, self.view.frame.size.height-30) style:UITableViewStylePlain];
+    self.tableView =[[UITableView alloc] initWithFrame:CGRectMake(0, 40, self.view.frame.size.width, self.view.frame.size.height-40) style:UITableViewStylePlain];
     [self.tableView registerNib:[UINib nibWithNibName:@"TK_MenuTableViewCell" bundle:nil] forCellReuseIdentifier:@"MenuCell"];
-    
+    self.tableView.backgroundColor =[UIColor clearColor];
     self.tableView.delegate=self;
     self.tableView.dataSource=self;
     
@@ -71,6 +71,7 @@
 {
     TK_MenuTableViewCell *cell =[self.tableView dequeueReusableCellWithIdentifier:@"MenuCell"];
     cell.menuLabel.text =self.menuArray[indexPath.row];
+    cell.backgroundColor =[UIColor clearColor];
     
     return cell;
 }

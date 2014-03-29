@@ -40,13 +40,12 @@
     self.sender = @"Username of sender";
     
     self.messages = [[NSMutableArray alloc] initWithObjects:
-                     [[JSMessage alloc] initWithText:@"JSMessagesViewController is simple and easy to use." sender:@"user" date:[NSDate distantPast]],
+                     [[JSMessage alloc] initWithText:@"歡迎使用 提問系統  右上角 可以選擇發送對象" sender:@"user" date:[NSDate distantPast]],
                      nil];
     
     
     
-    
-    
+
     self.avatars = [[NSDictionary alloc] initWithObjectsAndKeys:
                     [JSAvatarImageFactory avatarImageNamed:@"avatar-placeholder" croppedToCircle:YES], @"user",
                     nil];

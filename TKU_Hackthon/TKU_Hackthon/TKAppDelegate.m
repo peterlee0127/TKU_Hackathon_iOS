@@ -8,10 +8,13 @@
 
 #import "TKAppDelegate.h"
 #import "TK_PlistModel.h"
+#import "TK_BLEModel.h"
+#import "TK_WebSocket.h"
 
 #import "TK_LoginViewController.h"
 #import "TK_UserCourseViewController.h"
 #import "TK_CommentViewController.h"
+
 
 @implementation TKAppDelegate
 {
@@ -32,16 +35,14 @@
     }
     else
     {
-        
         TK_LoginViewController *loginVC =[[TK_LoginViewController alloc] initWithNibName:@"TK_LoginViewController" bundle:nil];
         self.navVC = [[UINavigationController alloc] initWithRootViewController:loginVC];
         self.window.rootViewController =self.navVC;
     }
+    [TK_WebSocket shareInstance];
+    [TK_BLEModel shareInstance];
     
-    
- 
     [self.window makeKeyAndVisible];
-    
     
     return YES;
 }

@@ -25,12 +25,14 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" id="fzQ-ih-fdu">
-                        <rect key="frame" x="0.0" y="119" width="160" height="1"/>
+                        <rect key="frame" x="0.0" y="118" width="160" height="1"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </subviews>
+                <color key="backgroundColor" red="0.82745105028152466" green="0.7725490927696228" blue="0.67450982332229614" alpha="1" colorSpace="deviceRGB"/>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="menuImageView" destination="x1Z-9H-LSX" id="Ffn-fK-v3q"/>
                 <outlet property="menuLabel" destination="KoO-Xl-gWa" id="0Ro-ML-EZU"/>

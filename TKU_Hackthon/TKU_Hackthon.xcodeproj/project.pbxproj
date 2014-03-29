@@ -13,6 +13,7 @@
 		D031B94918E689C000E1B14A /* TK_UserCourseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D031B94818E689C000E1B14A /* TK_UserCourseCollectionViewCell.xib */; };
 		D031B94E18E6924F00E1B14A /* TK_CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D031B94C18E6924F00E1B14A /* TK_CommentViewController.m */; };
 		D031B94F18E6924F00E1B14A /* TK_CommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D031B94D18E6924F00E1B14A /* TK_CommentViewController.xib */; };
+		D031B95218E6A1CC00E1B14A /* TK_APIModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D031B95118E6A1CC00E1B14A /* TK_APIModel.m */; };
 		D03CE80518E66182007372AC /* TK_MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D03CE80318E66182007372AC /* TK_MenuViewController.m */; };
 		D03CE80618E66182007372AC /* TK_MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D03CE80418E66182007372AC /* TK_MenuViewController.xib */; };
 		D03CE80C18E661AD007372AC /* HTMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D03CE80918E661AD007372AC /* HTMLNode.m */; };
@@ -54,6 +55,8 @@
 		D031B94B18E6924F00E1B14A /* TK_CommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_CommentViewController.h; sourceTree = "<group>"; };
 		D031B94C18E6924F00E1B14A /* TK_CommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_CommentViewController.m; sourceTree = "<group>"; };
 		D031B94D18E6924F00E1B14A /* TK_CommentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TK_CommentViewController.xib; sourceTree = "<group>"; };
+		D031B95018E6A1CC00E1B14A /* TK_APIModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_APIModel.h; sourceTree = "<group>"; };
+		D031B95118E6A1CC00E1B14A /* TK_APIModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_APIModel.m; sourceTree = "<group>"; };
 		D03CE80218E66182007372AC /* TK_MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_MenuViewController.h; sourceTree = "<group>"; };
 		D03CE80318E66182007372AC /* TK_MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_MenuViewController.m; sourceTree = "<group>"; };
 		D03CE80418E66182007372AC /* TK_MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TK_MenuViewController.xib; sourceTree = "<group>"; };
@@ -292,6 +295,8 @@
 				D0D96D6118E65EF40084DFF5 /* TK_BLEModel.m */,
 				D0D96D6318E65F1A0084DFF5 /* TK_WebSocket.h */,
 				D0D96D6418E65F1A0084DFF5 /* TK_WebSocket.m */,
+				D031B95018E6A1CC00E1B14A /* TK_APIModel.h */,
+				D031B95118E6A1CC00E1B14A /* TK_APIModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -424,6 +429,7 @@
 				D0D96D6218E65EF40084DFF5 /* TK_BLEModel.m in Sources */,
 				D03CE83718E66C5E007372AC /* TK_PlistModel.m in Sources */,
 				D03CE82018E661F8007372AC /* SocketIOPacket.m in Sources */,
+				D031B95218E6A1CC00E1B14A /* TK_APIModel.m in Sources */,
 				D07CFC9518E65E48000E45F7 /* TKAppDelegate.m in Sources */,
 				D03CE83018E664DE007372AC /* TK_UserCourseViewController.m in Sources */,
 				D031B94218E67A7C00E1B14A /* PLHUDView.m in Sources */,
