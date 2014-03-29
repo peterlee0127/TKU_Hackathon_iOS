@@ -11,6 +11,7 @@
 
 #import "TK_LoginViewController.h"
 #import "TK_UserCourseViewController.h"
+#import "TK_CommentViewController.h"
 
 @implementation TKAppDelegate
 {
@@ -52,15 +53,39 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showRevalViewController) name:@"kLoginSuccess" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showMenu) name:@"kShowMenuViewController" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeViewController:) name:@"kchangeViewController" object:nil];
 }
 -(void) changeViewController :(NSNotification *) noti
 {
     NSNumber * number = [noti object];
+    NSUInteger index = [number integerValue];
+    switch (index) {
+        case 0:
+        {
+            TK_UserCourseViewController *frontVC=[[TK_UserCourseViewController alloc] initWithNibName:@"TK_UserCourseViewController" bundle:nil];
+        
+            self.navVC =[[UINavigationController alloc] initWithRootViewController:frontVC];
+            break;
+        }
+        case 1:
+        {
+            TK_CommentViewController *frontVC=[[TK_CommentViewController alloc] initWithNibName:@"TK_CommentViewController" bundle:nil];
+        
+            self.navVC =[[UINavigationController alloc] initWithRootViewController:frontVC];
+            break;
+        }
+        case 2:
+        {
+            break;
+        }
+        default:
+            break;
+    }
     
     
-    
-    
-    
+    [self.revealViewController setFrontViewController:self.navVC];
+    [self.revealViewController setMinimumWidth:160 maximumWidth:170 forViewController:self.menuViewController];
+    [self showMenu];
 }
 -(void) showRevalViewController
 {
@@ -74,12 +99,15 @@
     
     
     self.window.rootViewController = self.revealViewController;
+ 
 }
 -(void) showMenu
 {
-    [self.revealViewController showViewController:self.menuViewController];
-
-
+    if(self.revealViewController.state == PKRevealControllerShowsFrontViewController)
+        [self.revealViewController showViewController:self.revealViewController.leftViewController];
+    else
+        [self.revealViewController showViewController:self.revealViewController.frontViewController];
+    
 }
 - (void)applicationWillResignActive:(UIApplication *)application
 {

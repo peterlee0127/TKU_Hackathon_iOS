@@ -31,7 +31,6 @@
     TK_PlistModel *plist = [TK_PlistModel shareInstance];
     self.courseArray = [plist loadUserCourse];
     
-    NSLog(@"%@",self.courseArray);
     
     self.collectionView =[[UICollectionView alloc] initWithFrame:self.collectionView.frame collectionViewLayout:self.flowLayout];
     [self.collectionView registerNib:[UINib nibWithNibName:@"TK_UserCourseCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"UserCourseCollectionViewCell"];

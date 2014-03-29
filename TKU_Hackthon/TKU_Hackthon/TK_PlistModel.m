@@ -35,7 +35,7 @@
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
-    filePath = [documentsDirectory stringByAppendingString:@"setting.plist"];
+    filePath = [documentsDirectory stringByAppendingString:@"/setting.plist"];
     NSFileManager *fileManager = [NSFileManager defaultManager];
     if ([fileManager fileExistsAtPath: filePath])
     {
@@ -82,7 +82,10 @@
 
 -(void) saveToPlist
 {
-    [self.plistDict writeToFile:filePath atomically:NO];
+    dispatch_async(dispatch_get_main_queue(), ^{
+    if([self.plistDict writeToFile:filePath atomically:NO])
+        NSLog(@"save success");
+    });
 }
 
 

@@ -11,6 +11,8 @@
 		D031B94218E67A7C00E1B14A /* PLHUDView.m in Sources */ = {isa = PBXBuildFile; fileRef = D031B94118E67A7C00E1B14A /* PLHUDView.m */; };
 		D031B94718E689A900E1B14A /* TK_UserCourseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D031B94618E689A900E1B14A /* TK_UserCourseCollectionViewCell.m */; };
 		D031B94918E689C000E1B14A /* TK_UserCourseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D031B94818E689C000E1B14A /* TK_UserCourseCollectionViewCell.xib */; };
+		D031B94E18E6924F00E1B14A /* TK_CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D031B94C18E6924F00E1B14A /* TK_CommentViewController.m */; };
+		D031B94F18E6924F00E1B14A /* TK_CommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D031B94D18E6924F00E1B14A /* TK_CommentViewController.xib */; };
 		D03CE80518E66182007372AC /* TK_MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D03CE80318E66182007372AC /* TK_MenuViewController.m */; };
 		D03CE80618E66182007372AC /* TK_MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D03CE80418E66182007372AC /* TK_MenuViewController.xib */; };
 		D03CE80C18E661AD007372AC /* HTMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D03CE80918E661AD007372AC /* HTMLNode.m */; };
@@ -49,6 +51,9 @@
 		D031B94518E689A900E1B14A /* TK_UserCourseCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_UserCourseCollectionViewCell.h; sourceTree = "<group>"; };
 		D031B94618E689A900E1B14A /* TK_UserCourseCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_UserCourseCollectionViewCell.m; sourceTree = "<group>"; };
 		D031B94818E689C000E1B14A /* TK_UserCourseCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TK_UserCourseCollectionViewCell.xib; sourceTree = "<group>"; };
+		D031B94B18E6924F00E1B14A /* TK_CommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_CommentViewController.h; sourceTree = "<group>"; };
+		D031B94C18E6924F00E1B14A /* TK_CommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_CommentViewController.m; sourceTree = "<group>"; };
+		D031B94D18E6924F00E1B14A /* TK_CommentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TK_CommentViewController.xib; sourceTree = "<group>"; };
 		D03CE80218E66182007372AC /* TK_MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_MenuViewController.h; sourceTree = "<group>"; };
 		D03CE80318E66182007372AC /* TK_MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_MenuViewController.m; sourceTree = "<group>"; };
 		D03CE80418E66182007372AC /* TK_MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TK_MenuViewController.xib; sourceTree = "<group>"; };
@@ -142,16 +147,27 @@
 			name = UserCourse;
 			sourceTree = "<group>";
 		};
+		D031B94A18E6922900E1B14A /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				D031B94B18E6924F00E1B14A /* TK_CommentViewController.h */,
+				D031B94C18E6924F00E1B14A /* TK_CommentViewController.m */,
+				D031B94D18E6924F00E1B14A /* TK_CommentViewController.xib */,
+			);
+			name = Comment;
+			sourceTree = "<group>";
+		};
 		D03CE80118E6616A007372AC /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				D03CE82718E66412007372AC /* Menu */,
-				D031B94418E6897C00E1B14A /* UserCourse */,
 				D03CE83218E66AB6007372AC /* TK_TopViewController.h */,
 				D03CE83318E66AB6007372AC /* TK_TopViewController.m */,
 				D03CE83818E671BF007372AC /* TK_LoginViewController.h */,
 				D03CE83918E671BF007372AC /* TK_LoginViewController.m */,
 				D03CE83A18E671BF007372AC /* TK_LoginViewController.xib */,
+				D03CE82718E66412007372AC /* Menu */,
+				D031B94418E6897C00E1B14A /* UserCourse */,
+				D031B94A18E6922900E1B14A /* Comment */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -247,6 +263,7 @@
 				D07CFC9318E65E48000E45F7 /* TKAppDelegate.h */,
 				D07CFC9418E65E48000E45F7 /* TKAppDelegate.m */,
 				D0D96D6618E65F1E0084DFF5 /* Model */,
+				D03CE80118E6616A007372AC /* ViewController */,
 				D07CFC9C18E65E48000E45F7 /* Images.xcassets */,
 				D07CFC8B18E65E48000E45F7 /* Supporting Files */,
 			);
@@ -275,7 +292,6 @@
 				D0D96D6118E65EF40084DFF5 /* TK_BLEModel.m */,
 				D0D96D6318E65F1A0084DFF5 /* TK_WebSocket.h */,
 				D0D96D6418E65F1A0084DFF5 /* TK_WebSocket.m */,
-				D03CE80118E6616A007372AC /* ViewController */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -349,6 +365,7 @@
 				D03CE83118E664DE007372AC /* TK_UserCourseViewController.xib in Resources */,
 				D03CE83C18E671BF007372AC /* TK_LoginViewController.xib in Resources */,
 				D07CFC8F18E65E48000E45F7 /* InfoPlist.strings in Resources */,
+				D031B94F18E6924F00E1B14A /* TK_CommentViewController.xib in Resources */,
 				D031B94918E689C000E1B14A /* TK_UserCourseCollectionViewCell.xib in Resources */,
 				D03CE82C18E6642C007372AC /* TK_MenuTableViewCell.xib in Resources */,
 			);
@@ -399,6 +416,7 @@
 				D03CE83418E66AB6007372AC /* TK_TopViewController.m in Sources */,
 				D0D96D6518E65F1A0084DFF5 /* TK_WebSocket.m in Sources */,
 				D07CFC9118E65E48000E45F7 /* main.m in Sources */,
+				D031B94E18E6924F00E1B14A /* TK_CommentViewController.m in Sources */,
 				D03CE82B18E6642C007372AC /* TK_MenuTableViewCell.m in Sources */,
 				D03CE80C18E661AD007372AC /* HTMLNode.m in Sources */,
 				D03CE81E18E661F8007372AC /* SocketIO.m in Sources */,

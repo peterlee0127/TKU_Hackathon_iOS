@@ -81,6 +81,13 @@
 }
 #pragma mark - UITableView Delegate
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSNumber *number = [NSNumber numberWithInt:indexPath.row];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"kchangeViewController" object:number];
+
+
+}
 
 
 @end

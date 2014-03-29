@@ -37,6 +37,8 @@
     
     
     [self.loginButton addTarget:self action:@selector(login) forControlEvents:UIControlEventTouchDown];
+    
+    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -86,10 +88,6 @@
             });
 
         }
-        
-       
-        
-        NSLog(@"data:%@",data);
         
     }];
 
