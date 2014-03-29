@@ -34,7 +34,7 @@
     plistModel =[TK_PlistModel shareInstance];
     if([plistModel UserIsAdmin])
     {
-        self.menuArray =[NSArray arrayWithObjects:@"我的課表",@"意見",@"在線",@"發送訊號",@"登出", nil];
+        self.menuArray =[NSArray arrayWithObjects:@"我的課表",@"意見",@"目前位置",@"在線名單",@"投票",@"發送BLE訊號",@"登出", nil];
         
         self.menuImageArray = [NSArray arrayWithObjects:@"",@"",@"",@"",@"", nil];
     }
@@ -44,7 +44,7 @@
     
         self.menuImageArray = [NSArray arrayWithObjects:@"",@"",@"",@"",@"", nil];
     }
-    self.tableView =[[UITableView alloc] initWithFrame:CGRectMake(0, 40, self.view.frame.size.width, self.view.frame.size.height-40) style:UITableViewStylePlain];
+    self.tableView =[[UITableView alloc] initWithFrame:CGRectMake(0, 40, self.view.frame.size.width, [UIScreen mainScreen].bounds.size.height-40) style:UITableViewStylePlain];
     [self.tableView registerNib:[UINib nibWithNibName:@"TK_MenuTableViewCell" bundle:nil] forCellReuseIdentifier:@"MenuCell"];
     self.tableView.backgroundColor =[UIColor clearColor];
     self.tableView.delegate=self;

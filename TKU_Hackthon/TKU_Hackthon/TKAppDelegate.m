@@ -15,6 +15,8 @@
 #import "TK_UserCourseViewController.h"
 #import "TK_CommentViewController.h"
 #import "TK_CurrentLocationViewController.h"
+#import "TK_ReqVoteViewController.h"
+#import "TK_OnlineViewController.h"
 
 @implementation TKAppDelegate
 {
@@ -85,13 +87,25 @@
         }
         case 3:
         {
+            TK_OnlineViewController *front =[[TK_OnlineViewController alloc] initWithNibName:@"TK_OnlineViewController" bundle:nil];
+            self.navVC =[[UINavigationController alloc] initWithRootViewController:front];
             break;
         }
         case 4:
         {
+            TK_ReqVoteViewController *reqVC =[[TK_ReqVoteViewController alloc] initWithNibName:@"TK_ReqVoteViewController" bundle:nil];
+            self.navVC =[[UINavigationController alloc] initWithRootViewController:reqVC];
+            break;
+        }
+        case 5:
+        {
+            break;
+        }
+        case 6:
+        {
+        
             [self showLoginViewController];
             return;
-            break;
         }
         default:
             break;

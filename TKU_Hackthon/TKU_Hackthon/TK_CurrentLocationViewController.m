@@ -18,6 +18,7 @@
     UIView *midiumCircleView;
     UIView *smallCircleView;
     IBOutlet UILabel *locationLabel;
+    NSString *userInRoom ;
 }
 @end
 
@@ -36,10 +37,11 @@
 {
     [super viewDidLoad];
     count =0;
+    userInRoom =@"NO";
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userLocation:) name:kUserIsInClass object:nil];
     
     
-     bigCircleView = [[UIView alloc] initWithFrame:CGRectMake(0,20,320,320)];
+    bigCircleView = [[UIView alloc] initWithFrame:CGRectMake(0,20,320,320)];
     bigCircleView.alpha = 0.5;
     bigCircleView.layer.cornerRadius = bigCircleView.frame.size.width/2;
     bigCircleView.backgroundColor = [UIColor blueColor];
@@ -57,48 +59,36 @@
     smallCircleView.backgroundColor =[UIColor greenColor];
     [self.view addSubview:smallCircleView];
     
-    
-    locationLabel.textAlignment = NSTextAlignmentCenter;
-  
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(sayLocation)];
+    tap.numberOfTapsRequired=1;
+    locationLabel.userInteractionEnabled=YES;
+    [locationLabel addGestureRecognizer:tap];
+
+
     // Do any additional setup after loading the view from its nib.
+}
+-(void) sayLocation
+{
+    if([userInRoom isEqualToString:@"NO"])
+        return;
+
+    
+    MPMusicPlayerController *player =[[MPMusicPlayerController alloc] init];
+    if(player.volume<0.3)
+        player.volume=0.4;
+    
+   
+    AVSpeechSynthesizer *syn=[[AVSpeechSynthesizer alloc] init];
+    AVSpeechUtterance *utt=[AVSpeechUtterance speechUtteranceWithString:[NSString stringWithFormat:@"你現在在%@",userInRoom]];
+    [utt setRate:0.15];
+    [syn speakUtterance:utt];
 }
 -(void) userLocation: (NSNotification *) noti
 {
     NSDictionary *dict =(NSDictionary *)[noti object];
-    dispatch_async(dispatch_get_main_queue(), ^{
-        locationLabel.text =[NSString stringWithFormat:@"你現在在:%@",dict[@"room"]];
-    });
-    if(count ==2)
-    {
-    
-        if([dict[@"distance"] floatValue] < -0.5)
-        {
+     userInRoom =dict[@"room"];
+    locationLabel.text =[NSString stringWithFormat:@"你現在在:%@",dict[@"room"]];
 
-        }
-        else
-        {
-            MPMusicPlayerController *player =[[MPMusicPlayerController alloc] init];
-//            if(player.volume<0.3)
-//                player.volume=0.4;
-        
-            NSString *userInRoom =dict[@"room"];
-        
-            AVSpeechSynthesizer *syn=[[AVSpeechSynthesizer alloc] init];
-            AVSpeechUtterance *utt=[AVSpeechUtterance speechUtteranceWithString:[NSString stringWithFormat:@"你現在在%@",userInRoom]];
-            [utt setRate:0.15];
-//            [syn speakUtterance:utt];
-        
-        
-        }
-        count=0;
-    }
-    else
-        count++;
-}
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

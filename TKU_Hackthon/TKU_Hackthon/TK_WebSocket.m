@@ -120,7 +120,7 @@
         id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         
         if([(NSString *)(json[@"args"][0][@"status"])  isEqualToString:@"YES"] )
-            NSLog(@"success");
+            NSLog(@"addme success");
     }
     else if([packet.name isEqualToString:@"listen_chat"])
     {
@@ -140,7 +140,7 @@
         JSMessage *message =[[JSMessage alloc] initWithText:dict[kmessage] sender:dict[kstu_id] date:[NSDate date]];
         [self.messageArray addObject:message];
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"receiveMessage" object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"receiveMessage" object:nil];
     }
 }
 - (void) socketIO:(SocketIO *)socket didSendMessage:(SocketIOPacket *)packet

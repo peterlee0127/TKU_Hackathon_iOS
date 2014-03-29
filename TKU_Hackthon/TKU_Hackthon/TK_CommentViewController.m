@@ -94,6 +94,7 @@
 }
 -(void) showMenu
 {
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:kShowMenuViewController object:nil];
     
 }

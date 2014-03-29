@@ -48,6 +48,14 @@
 		D0D4EC7318E6D7D400F2D2F0 /* TK_ActAsBeaconViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0D4EC7118E6D7D400F2D2F0 /* TK_ActAsBeaconViewController.xib */; };
 		D0D4EC7718E6F0D100F2D2F0 /* TK_ReqVoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D4EC7518E6F0D100F2D2F0 /* TK_ReqVoteViewController.m */; };
 		D0D4EC7818E6F0D100F2D2F0 /* TK_ReqVoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0D4EC7618E6F0D100F2D2F0 /* TK_ReqVoteViewController.xib */; };
+		D0D4EC7B18E6F3AB00F2D2F0 /* vote_start.png in Resources */ = {isa = PBXBuildFile; fileRef = D0D4EC7918E6F3AB00F2D2F0 /* vote_start.png */; };
+		D0D4EC7C18E6F3AB00F2D2F0 /* vote_total.png in Resources */ = {isa = PBXBuildFile; fileRef = D0D4EC7A18E6F3AB00F2D2F0 /* vote_total.png */; };
+		D0D4EC8018E6FF4200F2D2F0 /* TK_VotingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D4EC7E18E6FF4200F2D2F0 /* TK_VotingViewController.m */; };
+		D0D4EC8118E6FF4200F2D2F0 /* TK_VotingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0D4EC7F18E6FF4200F2D2F0 /* TK_VotingViewController.xib */; };
+		D0D4EC8618E7011C00F2D2F0 /* TK_Vote_GraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D4EC8418E7011C00F2D2F0 /* TK_Vote_GraphViewController.m */; };
+		D0D4EC8718E7011C00F2D2F0 /* TK_Vote_GraphViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0D4EC8518E7011C00F2D2F0 /* TK_Vote_GraphViewController.xib */; };
+		D0D4EC8B18E7022300F2D2F0 /* TK_OnlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D4EC8918E7022300F2D2F0 /* TK_OnlineViewController.m */; };
+		D0D4EC8C18E7022300F2D2F0 /* TK_OnlineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0D4EC8A18E7022300F2D2F0 /* TK_OnlineViewController.xib */; };
 		D0D96D6218E65EF40084DFF5 /* TK_BLEModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D96D6118E65EF40084DFF5 /* TK_BLEModel.m */; };
 		D0D96D6518E65F1A0084DFF5 /* TK_WebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D96D6418E65F1A0084DFF5 /* TK_WebSocket.m */; };
 /* End PBXBuildFile section */
@@ -121,6 +129,17 @@
 		D0D4EC7418E6F0D100F2D2F0 /* TK_ReqVoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_ReqVoteViewController.h; sourceTree = "<group>"; };
 		D0D4EC7518E6F0D100F2D2F0 /* TK_ReqVoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_ReqVoteViewController.m; sourceTree = "<group>"; };
 		D0D4EC7618E6F0D100F2D2F0 /* TK_ReqVoteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TK_ReqVoteViewController.xib; sourceTree = "<group>"; };
+		D0D4EC7918E6F3AB00F2D2F0 /* vote_start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vote_start.png; sourceTree = "<group>"; };
+		D0D4EC7A18E6F3AB00F2D2F0 /* vote_total.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vote_total.png; sourceTree = "<group>"; };
+		D0D4EC7D18E6FF4200F2D2F0 /* TK_VotingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_VotingViewController.h; sourceTree = "<group>"; };
+		D0D4EC7E18E6FF4200F2D2F0 /* TK_VotingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_VotingViewController.m; sourceTree = "<group>"; };
+		D0D4EC7F18E6FF4200F2D2F0 /* TK_VotingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TK_VotingViewController.xib; sourceTree = "<group>"; };
+		D0D4EC8318E7011C00F2D2F0 /* TK_Vote_GraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_Vote_GraphViewController.h; sourceTree = "<group>"; };
+		D0D4EC8418E7011C00F2D2F0 /* TK_Vote_GraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_Vote_GraphViewController.m; sourceTree = "<group>"; };
+		D0D4EC8518E7011C00F2D2F0 /* TK_Vote_GraphViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TK_Vote_GraphViewController.xib; sourceTree = "<group>"; };
+		D0D4EC8818E7022300F2D2F0 /* TK_OnlineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_OnlineViewController.h; sourceTree = "<group>"; };
+		D0D4EC8918E7022300F2D2F0 /* TK_OnlineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_OnlineViewController.m; sourceTree = "<group>"; };
+		D0D4EC8A18E7022300F2D2F0 /* TK_OnlineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TK_OnlineViewController.xib; sourceTree = "<group>"; };
 		D0D96D6018E65EF40084DFF5 /* TK_BLEModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_BLEModel.h; sourceTree = "<group>"; };
 		D0D96D6118E65EF40084DFF5 /* TK_BLEModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_BLEModel.m; sourceTree = "<group>"; };
 		D0D96D6318E65F1A0084DFF5 /* TK_WebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_WebSocket.h; sourceTree = "<group>"; };
@@ -311,9 +330,12 @@
 				D0D4EC6F18E6D7D400F2D2F0 /* TK_ActAsBeaconViewController.h */,
 				D0D4EC7018E6D7D400F2D2F0 /* TK_ActAsBeaconViewController.m */,
 				D0D4EC7118E6D7D400F2D2F0 /* TK_ActAsBeaconViewController.xib */,
-				D0D4EC7418E6F0D100F2D2F0 /* TK_ReqVoteViewController.h */,
-				D0D4EC7518E6F0D100F2D2F0 /* TK_ReqVoteViewController.m */,
-				D0D4EC7618E6F0D100F2D2F0 /* TK_ReqVoteViewController.xib */,
+				D0D4EC8818E7022300F2D2F0 /* TK_OnlineViewController.h */,
+				D0D4EC8918E7022300F2D2F0 /* TK_OnlineViewController.m */,
+				D0D4EC8A18E7022300F2D2F0 /* TK_OnlineViewController.xib */,
+				D0D4EC8218E700EF00F2D2F0 /* Voting */,
+				D0D4EC7918E6F3AB00F2D2F0 /* vote_start.png */,
+				D0D4EC7A18E6F3AB00F2D2F0 /* vote_total.png */,
 			);
 			name = AdminOnly;
 			sourceTree = "<group>";
@@ -326,6 +348,22 @@
 				D0D4EC6C18E6C4E300F2D2F0 /* TK_CurrentLocationViewController.xib */,
 			);
 			name = CurrentLocation;
+			sourceTree = "<group>";
+		};
+		D0D4EC8218E700EF00F2D2F0 /* Voting */ = {
+			isa = PBXGroup;
+			children = (
+				D0D4EC7418E6F0D100F2D2F0 /* TK_ReqVoteViewController.h */,
+				D0D4EC7518E6F0D100F2D2F0 /* TK_ReqVoteViewController.m */,
+				D0D4EC7618E6F0D100F2D2F0 /* TK_ReqVoteViewController.xib */,
+				D0D4EC7D18E6FF4200F2D2F0 /* TK_VotingViewController.h */,
+				D0D4EC7E18E6FF4200F2D2F0 /* TK_VotingViewController.m */,
+				D0D4EC7F18E6FF4200F2D2F0 /* TK_VotingViewController.xib */,
+				D0D4EC8318E7011C00F2D2F0 /* TK_Vote_GraphViewController.h */,
+				D0D4EC8418E7011C00F2D2F0 /* TK_Vote_GraphViewController.m */,
+				D0D4EC8518E7011C00F2D2F0 /* TK_Vote_GraphViewController.xib */,
+			);
+			name = Voting;
 			sourceTree = "<group>";
 		};
 		D0D96D6618E65F1E0084DFF5 /* Model */ = {
@@ -409,16 +447,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0D4EC7B18E6F3AB00F2D2F0 /* vote_start.png in Resources */,
 				D0D4EC7318E6D7D400F2D2F0 /* TK_ActAsBeaconViewController.xib in Resources */,
 				D03CE80618E66182007372AC /* TK_MenuViewController.xib in Resources */,
 				D0D4EC6E18E6C4E300F2D2F0 /* TK_CurrentLocationViewController.xib in Resources */,
+				D0D4EC8118E6FF4200F2D2F0 /* TK_VotingViewController.xib in Resources */,
 				D07CFC9D18E65E48000E45F7 /* Images.xcassets in Resources */,
 				D03CE83118E664DE007372AC /* TK_UserCourseViewController.xib in Resources */,
 				D0D4EC7818E6F0D100F2D2F0 /* TK_ReqVoteViewController.xib in Resources */,
 				D03CE83C18E671BF007372AC /* TK_LoginViewController.xib in Resources */,
 				D07CFC8F18E65E48000E45F7 /* InfoPlist.strings in Resources */,
 				D031B94F18E6924F00E1B14A /* TK_CommentViewController.xib in Resources */,
+				D0D4EC8718E7011C00F2D2F0 /* TK_Vote_GraphViewController.xib in Resources */,
 				D031B94918E689C000E1B14A /* TK_UserCourseCollectionViewCell.xib in Resources */,
+				D0D4EC7C18E6F3AB00F2D2F0 /* vote_total.png in Resources */,
+				D0D4EC8C18E7022300F2D2F0 /* TK_OnlineViewController.xib in Resources */,
 				D03CE82C18E6642C007372AC /* TK_MenuTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,11 +506,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0D4EC8018E6FF4200F2D2F0 /* TK_VotingViewController.m in Sources */,
 				D03CE82218E661F8007372AC /* SocketIOTransportXHR.m in Sources */,
+				D0D4EC8B18E7022300F2D2F0 /* TK_OnlineViewController.m in Sources */,
 				D03CE83B18E671BF007372AC /* TK_LoginViewController.m in Sources */,
 				D03CE83418E66AB6007372AC /* TK_TopViewController.m in Sources */,
 				D0D96D6518E65F1A0084DFF5 /* TK_WebSocket.m in Sources */,
 				D07CFC9118E65E48000E45F7 /* main.m in Sources */,
+				D0D4EC8618E7011C00F2D2F0 /* TK_Vote_GraphViewController.m in Sources */,
 				D031B94E18E6924F00E1B14A /* TK_CommentViewController.m in Sources */,
 				D03CE82B18E6642C007372AC /* TK_MenuTableViewCell.m in Sources */,
 				D03CE80C18E661AD007372AC /* HTMLNode.m in Sources */,

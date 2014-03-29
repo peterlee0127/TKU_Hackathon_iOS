@@ -51,7 +51,10 @@
 -(void) saveUserInfo:(NSString *) stu_id andPass:(NSString *) password
 {
     if([stu_id isEqualToString:@"admin@admin"])
+    {
         self.plistDict[kUserIsAdmin]= @"YES";
+         [[NSNotificationCenter defaultCenter] postNotificationName:@"kLoginSuccess" object:nil];
+    }
     
     self.plistDict[kstu_id] = stu_id;
     self.plistDict[kpassword] = password;

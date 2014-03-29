@@ -6,34 +6,34 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TK_CurrentLocationViewController">
             <connections>
-                <outlet property="locationLabel" destination="yyv-tr-ZxQ" id="0Vi-b6-vyr"/>
+                <outlet property="locationLabel" destination="iDh-NY-Tcd" id="0C3-sn-aWo"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未知位置" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyv-tr-ZxQ">
-                    <rect key="frame" x="12" y="507" width="297" height="52"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未知位置" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDh-NY-Tcd">
+                    <rect key="frame" x="7" y="301" width="305" height="116"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="52" id="XNJ-tl-4L2"/>
+                        <constraint firstAttribute="height" constant="116" id="dMZ-iD-JZv"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                    <color key="textColor" red="0.82282162410000004" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" red="0.90196084980000002" green="0.93725496529999996" blue="0.93725496529999996" alpha="1" colorSpace="deviceRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="yyv-tr-ZxQ" secondAttribute="bottom" constant="9" id="LUP-eO-c0h"/>
-                <constraint firstItem="yyv-tr-ZxQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="12" id="dcR-g7-o8i"/>
-                <constraint firstItem="yyv-tr-ZxQ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="o0b-a9-wxf"/>
+                <constraint firstItem="iDh-NY-Tcd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="7" id="Gcd-gY-ju2"/>
+                <constraint firstAttribute="bottom" secondItem="iDh-NY-Tcd" secondAttribute="bottom" constant="63" id="OhG-n8-JWi"/>
+                <constraint firstAttribute="trailing" secondItem="iDh-NY-Tcd" secondAttribute="trailing" constant="8" id="gsw-zW-LCe"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
 </document>
