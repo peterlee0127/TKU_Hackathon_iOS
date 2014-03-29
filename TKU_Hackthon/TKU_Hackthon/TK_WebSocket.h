@@ -7,11 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SocketIO.h"
+#import "SocketIOPacket.h"
 
-@interface TK_WebSocket : NSObject
+@interface TK_WebSocket : NSObject <SocketIODelegate>
+
+
+@property (nonatomic,strong) SocketIO *socketIO;
+
+
 
 
 +(instancetype) shareInstance;
+-(void) connectToServer;
+
 
 
 @end

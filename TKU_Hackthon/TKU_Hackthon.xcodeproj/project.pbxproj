@@ -8,13 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		4309242240AE40A489CD2C1E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B04B74A2104459B1953A32 /* libPods.a */; };
+		D03CE80518E66182007372AC /* TK_MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D03CE80318E66182007372AC /* TK_MenuViewController.m */; };
+		D03CE80618E66182007372AC /* TK_MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D03CE80418E66182007372AC /* TK_MenuViewController.xib */; };
+		D03CE80C18E661AD007372AC /* HTMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D03CE80918E661AD007372AC /* HTMLNode.m */; };
+		D03CE80D18E661AD007372AC /* HTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D03CE80B18E661AD007372AC /* HTMLParser.m */; };
+		D03CE81118E661BF007372AC /* TKU_CourseSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = D03CE81018E661BF007372AC /* TKU_CourseSearch.m */; };
+		D03CE81E18E661F8007372AC /* SocketIO.m in Sources */ = {isa = PBXBuildFile; fileRef = D03CE81418E661F8007372AC /* SocketIO.m */; };
+		D03CE81F18E661F8007372AC /* SocketIOJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = D03CE81618E661F8007372AC /* SocketIOJSONSerialization.m */; };
+		D03CE82018E661F8007372AC /* SocketIOPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = D03CE81818E661F8007372AC /* SocketIOPacket.m */; };
+		D03CE82118E661F8007372AC /* SocketIOTransportWebsocket.m in Sources */ = {isa = PBXBuildFile; fileRef = D03CE81B18E661F8007372AC /* SocketIOTransportWebsocket.m */; };
+		D03CE82218E661F8007372AC /* SocketIOTransportXHR.m in Sources */ = {isa = PBXBuildFile; fileRef = D03CE81D18E661F8007372AC /* SocketIOTransportXHR.m */; };
+		D03CE82418E66253007372AC /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D03CE82318E66253007372AC /* libxml2.dylib */; };
+		D03CE82618E6625A007372AC /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D03CE82518E6625A007372AC /* libxml2.2.dylib */; };
+		D03CE82B18E6642C007372AC /* TK_MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D03CE82918E6642C007372AC /* TK_MenuTableViewCell.m */; };
+		D03CE82C18E6642C007372AC /* TK_MenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D03CE82A18E6642C007372AC /* TK_MenuTableViewCell.xib */; };
+		D03CE83018E664DE007372AC /* TK_FrontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D03CE82E18E664DE007372AC /* TK_FrontViewController.m */; };
+		D03CE83118E664DE007372AC /* TK_FrontViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D03CE82F18E664DE007372AC /* TK_FrontViewController.xib */; };
 		D07CFC8518E65E48000E45F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D07CFC8418E65E48000E45F7 /* Foundation.framework */; };
 		D07CFC8718E65E48000E45F7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D07CFC8618E65E48000E45F7 /* CoreGraphics.framework */; };
 		D07CFC8918E65E48000E45F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D07CFC8818E65E48000E45F7 /* UIKit.framework */; };
 		D07CFC8F18E65E48000E45F7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D07CFC8D18E65E48000E45F7 /* InfoPlist.strings */; };
 		D07CFC9118E65E48000E45F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D07CFC9018E65E48000E45F7 /* main.m */; };
 		D07CFC9518E65E48000E45F7 /* TKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D07CFC9418E65E48000E45F7 /* TKAppDelegate.m */; };
-		D07CFC9B18E65E48000E45F7 /* TK_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D07CFC9A18E65E48000E45F7 /* TK_ViewController.m */; };
 		D07CFC9D18E65E48000E45F7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D07CFC9C18E65E48000E45F7 /* Images.xcassets */; };
 		D0D96D6218E65EF40084DFF5 /* TK_BLEModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D96D6118E65EF40084DFF5 /* TK_BLEModel.m */; };
 		D0D96D6518E65F1A0084DFF5 /* TK_WebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D96D6418E65F1A0084DFF5 /* TK_WebSocket.m */; };
@@ -22,6 +37,34 @@
 
 /* Begin PBXFileReference section */
 		A49FA5AEE6A146CD8D224B41 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		D03CE80218E66182007372AC /* TK_MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_MenuViewController.h; sourceTree = "<group>"; };
+		D03CE80318E66182007372AC /* TK_MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_MenuViewController.m; sourceTree = "<group>"; };
+		D03CE80418E66182007372AC /* TK_MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TK_MenuViewController.xib; sourceTree = "<group>"; };
+		D03CE80818E661AD007372AC /* HTMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLNode.h; sourceTree = "<group>"; };
+		D03CE80918E661AD007372AC /* HTMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLNode.m; sourceTree = "<group>"; };
+		D03CE80A18E661AD007372AC /* HTMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLParser.h; sourceTree = "<group>"; };
+		D03CE80B18E661AD007372AC /* HTMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLParser.m; sourceTree = "<group>"; };
+		D03CE80F18E661BF007372AC /* TKU_CourseSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKU_CourseSearch.h; sourceTree = "<group>"; };
+		D03CE81018E661BF007372AC /* TKU_CourseSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKU_CourseSearch.m; sourceTree = "<group>"; };
+		D03CE81318E661F8007372AC /* SocketIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIO.h; sourceTree = "<group>"; };
+		D03CE81418E661F8007372AC /* SocketIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIO.m; sourceTree = "<group>"; };
+		D03CE81518E661F8007372AC /* SocketIOJSONSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOJSONSerialization.h; sourceTree = "<group>"; };
+		D03CE81618E661F8007372AC /* SocketIOJSONSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIOJSONSerialization.m; sourceTree = "<group>"; };
+		D03CE81718E661F8007372AC /* SocketIOPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOPacket.h; sourceTree = "<group>"; };
+		D03CE81818E661F8007372AC /* SocketIOPacket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIOPacket.m; sourceTree = "<group>"; };
+		D03CE81918E661F8007372AC /* SocketIOTransport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOTransport.h; sourceTree = "<group>"; };
+		D03CE81A18E661F8007372AC /* SocketIOTransportWebsocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOTransportWebsocket.h; sourceTree = "<group>"; };
+		D03CE81B18E661F8007372AC /* SocketIOTransportWebsocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIOTransportWebsocket.m; sourceTree = "<group>"; };
+		D03CE81C18E661F8007372AC /* SocketIOTransportXHR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOTransportXHR.h; sourceTree = "<group>"; };
+		D03CE81D18E661F8007372AC /* SocketIOTransportXHR.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIOTransportXHR.m; sourceTree = "<group>"; };
+		D03CE82318E66253007372AC /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		D03CE82518E6625A007372AC /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
+		D03CE82818E6642C007372AC /* TK_MenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_MenuTableViewCell.h; sourceTree = "<group>"; };
+		D03CE82918E6642C007372AC /* TK_MenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_MenuTableViewCell.m; sourceTree = "<group>"; };
+		D03CE82A18E6642C007372AC /* TK_MenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TK_MenuTableViewCell.xib; sourceTree = "<group>"; };
+		D03CE82D18E664DE007372AC /* TK_FrontViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_FrontViewController.h; sourceTree = "<group>"; };
+		D03CE82E18E664DE007372AC /* TK_FrontViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_FrontViewController.m; sourceTree = "<group>"; };
+		D03CE82F18E664DE007372AC /* TK_FrontViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TK_FrontViewController.xib; sourceTree = "<group>"; };
 		D07CFC8118E65E48000E45F7 /* TKU_Hackthon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TKU_Hackthon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D07CFC8418E65E48000E45F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D07CFC8618E65E48000E45F7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -32,8 +75,6 @@
 		D07CFC9218E65E48000E45F7 /* TKU_Hackthon-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TKU_Hackthon-Prefix.pch"; sourceTree = "<group>"; };
 		D07CFC9318E65E48000E45F7 /* TKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKAppDelegate.h; sourceTree = "<group>"; };
 		D07CFC9418E65E48000E45F7 /* TKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKAppDelegate.m; sourceTree = "<group>"; };
-		D07CFC9918E65E48000E45F7 /* TK_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TK_ViewController.h; sourceTree = "<group>"; };
-		D07CFC9A18E65E48000E45F7 /* TK_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TK_ViewController.m; sourceTree = "<group>"; };
 		D07CFC9C18E65E48000E45F7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D07CFCA318E65E48000E45F7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		D0D96D6018E65EF40084DFF5 /* TK_BLEModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_BLEModel.h; sourceTree = "<group>"; };
@@ -48,6 +89,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D03CE82618E6625A007372AC /* libxml2.2.dylib in Frameworks */,
+				D03CE82418E66253007372AC /* libxml2.dylib in Frameworks */,
 				D07CFC8718E65E48000E45F7 /* CoreGraphics.framework in Frameworks */,
 				D07CFC8918E65E48000E45F7 /* UIKit.framework in Frameworks */,
 				D07CFC8518E65E48000E45F7 /* Foundation.framework in Frameworks */,
@@ -58,6 +101,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D03CE80118E6616A007372AC /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D03CE82718E66412007372AC /* Menu */,
+				D03CE82D18E664DE007372AC /* TK_FrontViewController.h */,
+				D03CE82E18E664DE007372AC /* TK_FrontViewController.m */,
+				D03CE82F18E664DE007372AC /* TK_FrontViewController.xib */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		D03CE80718E661A1007372AC /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				D03CE81218E661CC007372AC /* SocketIO */,
+				D03CE80E18E661AF007372AC /* Parser */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		D03CE80E18E661AF007372AC /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				D03CE80818E661AD007372AC /* HTMLNode.h */,
+				D03CE80918E661AD007372AC /* HTMLNode.m */,
+				D03CE80A18E661AD007372AC /* HTMLParser.h */,
+				D03CE80B18E661AD007372AC /* HTMLParser.m */,
+			);
+			name = Parser;
+			sourceTree = "<group>";
+		};
+		D03CE81218E661CC007372AC /* SocketIO */ = {
+			isa = PBXGroup;
+			children = (
+				D03CE81318E661F8007372AC /* SocketIO.h */,
+				D03CE81418E661F8007372AC /* SocketIO.m */,
+				D03CE81518E661F8007372AC /* SocketIOJSONSerialization.h */,
+				D03CE81618E661F8007372AC /* SocketIOJSONSerialization.m */,
+				D03CE81718E661F8007372AC /* SocketIOPacket.h */,
+				D03CE81818E661F8007372AC /* SocketIOPacket.m */,
+				D03CE81918E661F8007372AC /* SocketIOTransport.h */,
+				D03CE81A18E661F8007372AC /* SocketIOTransportWebsocket.h */,
+				D03CE81B18E661F8007372AC /* SocketIOTransportWebsocket.m */,
+				D03CE81C18E661F8007372AC /* SocketIOTransportXHR.h */,
+				D03CE81D18E661F8007372AC /* SocketIOTransportXHR.m */,
+			);
+			name = SocketIO;
+			sourceTree = "<group>";
+		};
+		D03CE82718E66412007372AC /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				D03CE80218E66182007372AC /* TK_MenuViewController.h */,
+				D03CE80318E66182007372AC /* TK_MenuViewController.m */,
+				D03CE80418E66182007372AC /* TK_MenuViewController.xib */,
+				D03CE82818E6642C007372AC /* TK_MenuTableViewCell.h */,
+				D03CE82918E6642C007372AC /* TK_MenuTableViewCell.m */,
+				D03CE82A18E6642C007372AC /* TK_MenuTableViewCell.xib */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
 		D07CFC7818E65E48000E45F7 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +184,8 @@
 		D07CFC8318E65E48000E45F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D03CE82518E6625A007372AC /* libxml2.2.dylib */,
+				D03CE82318E66253007372AC /* libxml2.dylib */,
 				D07CFC8418E65E48000E45F7 /* Foundation.framework */,
 				D07CFC8618E65E48000E45F7 /* CoreGraphics.framework */,
 				D07CFC8818E65E48000E45F7 /* UIKit.framework */,
@@ -91,11 +198,10 @@
 		D07CFC8A18E65E48000E45F7 /* TKU_Hackthon */ = {
 			isa = PBXGroup;
 			children = (
+				D03CE80718E661A1007372AC /* Library */,
 				D07CFC9318E65E48000E45F7 /* TKAppDelegate.h */,
 				D07CFC9418E65E48000E45F7 /* TKAppDelegate.m */,
 				D0D96D6618E65F1E0084DFF5 /* Model */,
-				D07CFC9918E65E48000E45F7 /* TK_ViewController.h */,
-				D07CFC9A18E65E48000E45F7 /* TK_ViewController.m */,
 				D07CFC9C18E65E48000E45F7 /* Images.xcassets */,
 				D07CFC8B18E65E48000E45F7 /* Supporting Files */,
 			);
@@ -116,10 +222,13 @@
 		D0D96D6618E65F1E0084DFF5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D03CE80F18E661BF007372AC /* TKU_CourseSearch.h */,
+				D03CE81018E661BF007372AC /* TKU_CourseSearch.m */,
 				D0D96D6018E65EF40084DFF5 /* TK_BLEModel.h */,
 				D0D96D6118E65EF40084DFF5 /* TK_BLEModel.m */,
 				D0D96D6318E65F1A0084DFF5 /* TK_WebSocket.h */,
 				D0D96D6418E65F1A0084DFF5 /* TK_WebSocket.m */,
+				D03CE80118E6616A007372AC /* ViewController */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -179,8 +288,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D03CE80618E66182007372AC /* TK_MenuViewController.xib in Resources */,
 				D07CFC9D18E65E48000E45F7 /* Images.xcassets in Resources */,
+				D03CE83118E664DE007372AC /* TK_FrontViewController.xib in Resources */,
 				D07CFC8F18E65E48000E45F7 /* InfoPlist.strings in Resources */,
+				D03CE82C18E6642C007372AC /* TK_MenuTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,11 +336,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D07CFC9B18E65E48000E45F7 /* TK_ViewController.m in Sources */,
+				D03CE82218E661F8007372AC /* SocketIOTransportXHR.m in Sources */,
 				D0D96D6518E65F1A0084DFF5 /* TK_WebSocket.m in Sources */,
 				D07CFC9118E65E48000E45F7 /* main.m in Sources */,
+				D03CE82B18E6642C007372AC /* TK_MenuTableViewCell.m in Sources */,
+				D03CE80C18E661AD007372AC /* HTMLNode.m in Sources */,
+				D03CE81E18E661F8007372AC /* SocketIO.m in Sources */,
+				D03CE82118E661F8007372AC /* SocketIOTransportWebsocket.m in Sources */,
 				D0D96D6218E65EF40084DFF5 /* TK_BLEModel.m in Sources */,
+				D03CE82018E661F8007372AC /* SocketIOPacket.m in Sources */,
 				D07CFC9518E65E48000E45F7 /* TKAppDelegate.m in Sources */,
+				D03CE83018E664DE007372AC /* TK_FrontViewController.m in Sources */,
+				D03CE80D18E661AD007372AC /* HTMLParser.m in Sources */,
+				D03CE81F18E661F8007372AC /* SocketIOJSONSerialization.m in Sources */,
+				D03CE80518E66182007372AC /* TK_MenuViewController.m in Sources */,
+				D03CE81118E661BF007372AC /* TKU_CourseSearch.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +400,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include/libxml2,
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -310,6 +437,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include/libxml2,
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -324,6 +456,15 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TKU_Hackthon/TKU_Hackthon-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/JSMessagesViewController\"",
+					"\"${PODS_ROOT}/Headers/JSQSystemSoundPlayer\"",
+					"\"${PODS_ROOT}/Headers/PKRevealController\"",
+					"\"${PODS_ROOT}/Headers/SocketRocket\"",
+					/usr/include/libxml2,
+				);
 				INFOPLIST_FILE = "TKU_Hackthon/TKU_Hackthon-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -338,6 +479,15 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TKU_Hackthon/TKU_Hackthon-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/JSMessagesViewController\"",
+					"\"${PODS_ROOT}/Headers/JSQSystemSoundPlayer\"",
+					"\"${PODS_ROOT}/Headers/PKRevealController\"",
+					"\"${PODS_ROOT}/Headers/SocketRocket\"",
+					/usr/include/libxml2,
+				);
 				INFOPLIST_FILE = "TKU_Hackthon/TKU_Hackthon-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

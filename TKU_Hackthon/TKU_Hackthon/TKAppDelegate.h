@@ -7,9 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <PKRevealController.h>
+#import "TK_MenuViewController.h"
 
-@interface TKAppDelegate : UIResponder <UIApplicationDelegate>
+@interface TKAppDelegate : UIResponder <UIApplicationDelegate,PKRevealing>
 
 @property (strong, nonatomic) UIWindow *window;
+
+
+@property (nonatomic,strong) PKRevealController *revealViewController;
+@property (nonatomic,strong) TK_MenuViewController *menuViewController;
+@property (nonatomic,strong) UINavigationController *navVC;
 
 @end

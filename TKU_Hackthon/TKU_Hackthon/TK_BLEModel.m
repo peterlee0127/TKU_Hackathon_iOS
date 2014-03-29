@@ -19,6 +19,18 @@
     });
     return shareInstace_;
 }
+-(id) init
+{
+    self = [super init];
+    if(self)
+    {
+    
+        self.locationManager = [[CLLocationManager alloc] init];
+        self.locationManager.delegate=self;
+        self.beaconArray =[[NSMutableArray alloc] init];
+    }
+    return self;
+}
 
 
 @end

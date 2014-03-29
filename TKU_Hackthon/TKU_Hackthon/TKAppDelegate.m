@@ -7,6 +7,7 @@
 //
 
 #import "TKAppDelegate.h"
+#import "TK_FrontViewController.h"
 
 @implementation TKAppDelegate
 
@@ -17,11 +18,37 @@
     
     
     
+   self.menuViewController =[[TK_MenuViewController alloc] initWithNibName:@"TK_MenuViewController" bundle:nil];
+    
+    TK_FrontViewController *frontVC=[[TK_FrontViewController alloc] initWithNibName:@"TK_FrontViewController" bundle:nil];
+    
+    self.navVC =[[UINavigationController alloc] initWithRootViewController:frontVC];
+    
+    self.navVC.navigationItem.leftBarButtonItem =[[UIBarButtonItem alloc] initWithTitle:@"Menu" style:UIBarButtonItemStylePlain target:self action:@selector(showMenu)];
+    
+    
+    self.revealViewController =[PKRevealController revealControllerWithFrontViewController:self.navVC leftViewController:self.menuViewController];
+    
+    
+    self.window.rootViewController = self.revealViewController;
+    [self.window makeKeyAndVisible];
     
     
     return YES;
 }
-							
+-(void) changeViewController :(NSNotification *) noti
+{
+
+    
+    
+    
+}
+-(void) showMenu
+{
+    [self.revealViewController showViewController:self.menuViewController];
+
+
+}
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

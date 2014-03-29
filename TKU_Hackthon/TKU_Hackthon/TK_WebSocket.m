@@ -20,6 +20,12 @@
     });
     return shareInstace_;
 }
+-(void) connectToServer
+{
+    self.socketIO =[[SocketIO alloc] initWithDelegate:self];
+    [self.socketIO connectToHost:defaultSever onPort:defaultPort];
+}
+
 
 
 @end

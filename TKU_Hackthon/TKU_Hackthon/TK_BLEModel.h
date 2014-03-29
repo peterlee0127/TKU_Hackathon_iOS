@@ -7,10 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface TK_BLEModel : NSObject
+@interface TK_BLEModel : NSObject <CLLocationManagerDelegate>
+
+
+@property (nonatomic,strong) CLLocationManager *locationManager;
+@property (nonatomic,strong) NSMutableArray *beaconArray;
 
 
 +(instancetype) shareInstance;
+
+
 
 @end

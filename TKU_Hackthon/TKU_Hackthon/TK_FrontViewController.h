@@ -1,5 +1,5 @@
 //
-//  TKViewController.h
+//  TK_FrontViewController.h
 //  TKU_Hackthon
 //
 //  Created by Peterlee on 3/29/14.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TK_ViewController : UIViewController
-
-
+@interface TK_FrontViewController : UIViewController
 
 @end
