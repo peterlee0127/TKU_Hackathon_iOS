@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4309242240AE40A489CD2C1E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B04B74A2104459B1953A32 /* libPods.a */; };
+		D031B94218E67A7C00E1B14A /* PLHUDView.m in Sources */ = {isa = PBXBuildFile; fileRef = D031B94118E67A7C00E1B14A /* PLHUDView.m */; };
 		D03CE80518E66182007372AC /* TK_MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D03CE80318E66182007372AC /* TK_MenuViewController.m */; };
 		D03CE80618E66182007372AC /* TK_MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D03CE80418E66182007372AC /* TK_MenuViewController.xib */; };
 		D03CE80C18E661AD007372AC /* HTMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D03CE80918E661AD007372AC /* HTMLNode.m */; };
@@ -41,6 +42,8 @@
 
 /* Begin PBXFileReference section */
 		A49FA5AEE6A146CD8D224B41 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		D031B94018E67A7C00E1B14A /* PLHUDView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLHUDView.h; sourceTree = "<group>"; };
+		D031B94118E67A7C00E1B14A /* PLHUDView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLHUDView.m; sourceTree = "<group>"; };
 		D03CE80218E66182007372AC /* TK_MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_MenuViewController.h; sourceTree = "<group>"; };
 		D03CE80318E66182007372AC /* TK_MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_MenuViewController.m; sourceTree = "<group>"; };
 		D03CE80418E66182007372AC /* TK_MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TK_MenuViewController.xib; sourceTree = "<group>"; };
@@ -112,6 +115,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D031B94318E67C7A00E1B14A /* PLHudView */ = {
+			isa = PBXGroup;
+			children = (
+				D031B94018E67A7C00E1B14A /* PLHUDView.h */,
+				D031B94118E67A7C00E1B14A /* PLHUDView.m */,
+			);
+			name = PLHudView;
+			sourceTree = "<group>";
+		};
 		D03CE80118E6616A007372AC /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +143,7 @@
 		D03CE80718E661A1007372AC /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				D031B94318E67C7A00E1B14A /* PLHudView */,
 				D03CE81218E661CC007372AC /* SocketIO */,
 				D03CE80E18E661AF007372AC /* Parser */,
 			);
@@ -378,6 +391,7 @@
 				D03CE82018E661F8007372AC /* SocketIOPacket.m in Sources */,
 				D07CFC9518E65E48000E45F7 /* TKAppDelegate.m in Sources */,
 				D03CE83018E664DE007372AC /* TK_FrontViewController.m in Sources */,
+				D031B94218E67A7C00E1B14A /* PLHUDView.m in Sources */,
 				D03CE80D18E661AD007372AC /* HTMLParser.m in Sources */,
 				D03CE81F18E661F8007372AC /* SocketIOJSONSerialization.m in Sources */,
 				D03CE80518E66182007372AC /* TK_MenuViewController.m in Sources */,

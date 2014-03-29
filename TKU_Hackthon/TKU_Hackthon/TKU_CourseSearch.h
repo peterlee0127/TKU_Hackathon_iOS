@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void (^SearchCourseCompleteHandler)(NSArray *data,NSError *error);
+typedef void (^SearchCourseCompleteHandler)(NSArray *data);
 
 
 @interface TKU_CourseSearch : NSObject

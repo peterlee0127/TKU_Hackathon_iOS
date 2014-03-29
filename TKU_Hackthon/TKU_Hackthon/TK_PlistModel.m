@@ -60,6 +60,23 @@
 {
     return self.plistDict;
 }
+-(BOOL) UserIsAdmin
+{
+    if([self.plistDict[kstu_id] isEqualToString:@"admin@admin"] && [self.plistDict[kpassword] isEqualToString:@"admin"])
+        return YES;
+    else
+        return NO;
+}
+
+-(void) saveUserCourse :(NSArray *) courseArray
+{
+    self.plistDict[kUserCourse] = courseArray;
+}
+-(NSArray *) loadUserCourse
+{
+    return self.plistDict[kUserCourse];
+}
+
 -(void) saveToPlist
 {
     [self.plistDict writeToFile:filePath atomically:NO];

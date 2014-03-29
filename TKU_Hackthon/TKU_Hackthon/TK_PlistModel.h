@@ -16,7 +16,10 @@
 +(instancetype) shareInstance;
 -(void) saveUserInfo:(NSString *) stu_id andPass:(NSString *) password;
 -(NSDictionary *) loadUserInfo;
+-(BOOL) UserIsAdmin;
 
 
+-(void) saveUserCourse :(NSArray *) courseArray ;
+-(NSArray *) loadUserCourse;
 
 @end

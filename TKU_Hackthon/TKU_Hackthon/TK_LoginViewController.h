@@ -9,7 +9,7 @@
 #import "TK_TopViewController.h"
 #import "TKU_CourseSearch.h"
 
-@interface TK_LoginViewController : TK_TopViewController
+@interface TK_LoginViewController : UIViewController
 
 
 @property (nonatomic,strong) IBOutlet UITextField *accountTextField;

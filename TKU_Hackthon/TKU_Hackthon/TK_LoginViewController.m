@@ -7,6 +7,8 @@
 //
 
 #import "TK_LoginViewController.h"
+#import "TK_PlistModel.h"
+#import "PLHUDView.h"
 
 @interface TK_LoginViewController ()
 
@@ -32,17 +34,49 @@
 
 -(void) login
 {
-    if([self.accountTextField.text isEqualToString:@""] || [self.passwordTextField.text isEqualToString:@""])
+    if([self.accountTextField.text isEqualToString:@""])
+    {
+        UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"學號/管理帳號 不能空白喔" message:@"請填入" delegate:nil cancelButtonTitle:@"確定" otherButtonTitles:nil, nil];
+        [alert show];
         return;
+    }
+    if([self.passwordTextField.text isEqualToString:@""])
+    {
+        UIAlertView *alert=[[UIAlertView alloc] initWithTitle:@"密碼 不能空白喔" message:@"請填入" delegate:nil cancelButtonTitle:@"確定" otherButtonTitles:nil, nil];
+        [alert show];
+        return;
+    }
+    
+    TK_PlistModel *plistModel =[TK_PlistModel shareInstance];
+    [plistModel saveUserInfo:self.accountTextField.text andPass:self.passwordTextField.text];
+    PLHUDView *hud =[[PLHUDView alloc]initHUDWithType:HUDActivityIndicatorType];
+    [hud setHUDTitle:@"登入中"];
+    hud.HUDAlpha=0.7;
+    [hud showHUD];
+    [self.view addSubview:hud];
     
     TKU_CourseSearch *courseSearch =[TKU_CourseSearch shareInstance];
-    [courseSearch searchCourse:self.accountTextField.text  WithPassword:self.passwordTextField.text block:^(NSArray *data, NSError *error) {
-       if(error)
+    [courseSearch searchCourse:self.accountTextField.text  WithPassword:self.passwordTextField.text block:^(NSArray *data) {
+       
+        
+       if(data.count==0)
         {
-            UIAlertView *alert =[[UIAlertView alloc] initWithTitle:@"登入錯誤" message:@"請檢查學號/密碼是否有錯誤" delegate:nil cancelButtonTitle:@"確定" otherButtonTitles:nil, nil];
-            [alert show];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [hud hideHUD];
+                UIAlertView *alert =[[UIAlertView alloc] initWithTitle:@"登入錯誤" message:@"請檢查學號/密碼是否有錯誤" delegate:nil cancelButtonTitle:@"確定" otherButtonTitles:nil, nil];
+                [alert show];
+            });
+            
             return ;
         }
+        if(data.count>0)
+        {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [hud hideHUD];
+            });
+
+        }
+        
         NSLog(@"data:%@",data);
         
     }];

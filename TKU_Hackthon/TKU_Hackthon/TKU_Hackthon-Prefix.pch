@@ -24,3 +24,5 @@ static  NSString * const defaultFont = @"Helvetica-Light";
 static NSString * const kstu_id = @"stu_id";
 static NSString * const kpassword = @"password";
 static NSString * const kUserIsAdmin = @"kUserIsAdmin";
+static NSString * const kUserCourse = @"kUserCourse";
+

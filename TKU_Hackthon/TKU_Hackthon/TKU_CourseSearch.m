@@ -153,11 +153,11 @@
                                     return;
                                 
                                 if(![res isEqualToString:@"◎"])
-                                    {
+                                {
                                     
                                     [tempArray addObject:res];
-                                    
-                                    }
+                                
+                                }
                             }
                             
                             
@@ -169,8 +169,10 @@
                         if (range1.location != NSNotFound ) {
                             if(completeblock)
                             {
-                                NSError *error= [[NSError alloc] init];
-                                completeblock(nil,error);
+                                NSLog(@"login error");
+                                NSArray *array =[[NSArray alloc] init];
+                                completeblock(array);
+                                return;
                             }
                         }
                         
@@ -249,7 +251,7 @@
                         }];
                         
                             if(completeblock)
-                                completeblock(courseArray,nil);
+                                completeblock(courseArray);
                     }];
                     
                 }];
