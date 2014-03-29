@@ -66,22 +66,16 @@
      */
     [beacons enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         CLBeacon *beacon =(CLBeacon * )obj;
-        if(beacon.accuracy< 3.5)
+        if(beacon.accuracy< 15.5)
         {
-            if(count ==1)
-            {
+        
 //                NSLog(@"%f region:%@",beacon.accuracy,region.identifier);
                 NSDictionary *dict =[NSDictionary dictionaryWithObjectsAndKeys:
                                      region.identifier,@"room",
                                      [NSString stringWithFormat:@"%f",beacon.accuracy],@"distance"
                                      , nil];
                 [[NSNotificationCenter defaultCenter] postNotificationName:kUserIsInClass object:dict];
-                count =0 ;
-            }
-            else
-            {
-                count++;
-            }
+     
         }
         else
         {

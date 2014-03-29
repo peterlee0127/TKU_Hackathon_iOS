@@ -56,7 +56,7 @@
 -(void) userLocation: (NSNotification *) noti
 {
     NSDictionary *dict =(NSDictionary *)[noti object];
-    if([dict[@"distance"] floatValue] < -0.5)
+    if([dict[@"distance"] floatValue] < -0.1 || [dict[@"distance"] floatValue ] > 3)
     {
         userInRoom = @"NO";
         [self.socketIO disconnect];
