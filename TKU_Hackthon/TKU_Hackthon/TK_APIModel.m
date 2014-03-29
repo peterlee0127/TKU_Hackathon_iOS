@@ -49,6 +49,25 @@
      */
 
 }
+-(void) downloadClassInf
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    NSString *url=[NSString stringWithFormat:@"http://%@:%@/api/list",defaultSever,defaultPort];
+    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        self.classArray=(NSMutableArray *)responseObject;
+        NSLog(@"%@",self.classArray);
+        [self.delegate classInf:self.classArray];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        NSLog(@"error:%@",error);
+    }];
+    
+
+        ///
+}
 
 
 @end

@@ -42,6 +42,10 @@
 		D07CFC9518E65E48000E45F7 /* TKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D07CFC9418E65E48000E45F7 /* TKAppDelegate.m */; };
 		D07CFC9D18E65E48000E45F7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D07CFC9C18E65E48000E45F7 /* Images.xcassets */; };
 		D0D4EC6718E6BF2E00F2D2F0 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0D4EC6618E6BF2D00F2D2F0 /* MediaPlayer.framework */; };
+		D0D4EC6D18E6C4E300F2D2F0 /* TK_CurrentLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D4EC6B18E6C4E300F2D2F0 /* TK_CurrentLocationViewController.m */; };
+		D0D4EC6E18E6C4E300F2D2F0 /* TK_CurrentLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0D4EC6C18E6C4E300F2D2F0 /* TK_CurrentLocationViewController.xib */; };
+		D0D4EC7218E6D7D400F2D2F0 /* TK_ActAsBeaconViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D4EC7018E6D7D400F2D2F0 /* TK_ActAsBeaconViewController.m */; };
+		D0D4EC7318E6D7D400F2D2F0 /* TK_ActAsBeaconViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0D4EC7118E6D7D400F2D2F0 /* TK_ActAsBeaconViewController.xib */; };
 		D0D96D6218E65EF40084DFF5 /* TK_BLEModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D96D6118E65EF40084DFF5 /* TK_BLEModel.m */; };
 		D0D96D6518E65F1A0084DFF5 /* TK_WebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D96D6418E65F1A0084DFF5 /* TK_WebSocket.m */; };
 /* End PBXBuildFile section */
@@ -106,6 +110,12 @@
 		D07CFC9C18E65E48000E45F7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D07CFCA318E65E48000E45F7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		D0D4EC6618E6BF2D00F2D2F0 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		D0D4EC6A18E6C4E300F2D2F0 /* TK_CurrentLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_CurrentLocationViewController.h; sourceTree = "<group>"; };
+		D0D4EC6B18E6C4E300F2D2F0 /* TK_CurrentLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_CurrentLocationViewController.m; sourceTree = "<group>"; };
+		D0D4EC6C18E6C4E300F2D2F0 /* TK_CurrentLocationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TK_CurrentLocationViewController.xib; sourceTree = "<group>"; };
+		D0D4EC6F18E6D7D400F2D2F0 /* TK_ActAsBeaconViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_ActAsBeaconViewController.h; sourceTree = "<group>"; };
+		D0D4EC7018E6D7D400F2D2F0 /* TK_ActAsBeaconViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_ActAsBeaconViewController.m; sourceTree = "<group>"; };
+		D0D4EC7118E6D7D400F2D2F0 /* TK_ActAsBeaconViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TK_ActAsBeaconViewController.xib; sourceTree = "<group>"; };
 		D0D96D6018E65EF40084DFF5 /* TK_BLEModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_BLEModel.h; sourceTree = "<group>"; };
 		D0D96D6118E65EF40084DFF5 /* TK_BLEModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_BLEModel.m; sourceTree = "<group>"; };
 		D0D96D6318E65F1A0084DFF5 /* TK_WebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_WebSocket.h; sourceTree = "<group>"; };
@@ -166,11 +176,13 @@
 		D03CE80118E6616A007372AC /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				D0D4EC6818E6C46D00F2D2F0 /* AdminOnly */,
 				D03CE83218E66AB6007372AC /* TK_TopViewController.h */,
 				D03CE83318E66AB6007372AC /* TK_TopViewController.m */,
 				D03CE83818E671BF007372AC /* TK_LoginViewController.h */,
 				D03CE83918E671BF007372AC /* TK_LoginViewController.m */,
 				D03CE83A18E671BF007372AC /* TK_LoginViewController.xib */,
+				D0D4EC6918E6C4CC00F2D2F0 /* CurrentLocation */,
 				D03CE82718E66412007372AC /* Menu */,
 				D031B94418E6897C00E1B14A /* UserCourse */,
 				D031B94A18E6922900E1B14A /* Comment */,
@@ -288,6 +300,26 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D0D4EC6818E6C46D00F2D2F0 /* AdminOnly */ = {
+			isa = PBXGroup;
+			children = (
+				D0D4EC6F18E6D7D400F2D2F0 /* TK_ActAsBeaconViewController.h */,
+				D0D4EC7018E6D7D400F2D2F0 /* TK_ActAsBeaconViewController.m */,
+				D0D4EC7118E6D7D400F2D2F0 /* TK_ActAsBeaconViewController.xib */,
+			);
+			name = AdminOnly;
+			sourceTree = "<group>";
+		};
+		D0D4EC6918E6C4CC00F2D2F0 /* CurrentLocation */ = {
+			isa = PBXGroup;
+			children = (
+				D0D4EC6A18E6C4E300F2D2F0 /* TK_CurrentLocationViewController.h */,
+				D0D4EC6B18E6C4E300F2D2F0 /* TK_CurrentLocationViewController.m */,
+				D0D4EC6C18E6C4E300F2D2F0 /* TK_CurrentLocationViewController.xib */,
+			);
+			name = CurrentLocation;
+			sourceTree = "<group>";
+		};
 		D0D96D6618E65F1E0084DFF5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -369,7 +401,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0D4EC7318E6D7D400F2D2F0 /* TK_ActAsBeaconViewController.xib in Resources */,
 				D03CE80618E66182007372AC /* TK_MenuViewController.xib in Resources */,
+				D0D4EC6E18E6C4E300F2D2F0 /* TK_CurrentLocationViewController.xib in Resources */,
 				D07CFC9D18E65E48000E45F7 /* Images.xcassets in Resources */,
 				D03CE83118E664DE007372AC /* TK_UserCourseViewController.xib in Resources */,
 				D03CE83C18E671BF007372AC /* TK_LoginViewController.xib in Resources */,
@@ -432,11 +466,13 @@
 				D03CE82118E661F8007372AC /* SocketIOTransportWebsocket.m in Sources */,
 				D0D96D6218E65EF40084DFF5 /* TK_BLEModel.m in Sources */,
 				D03CE83718E66C5E007372AC /* TK_PlistModel.m in Sources */,
+				D0D4EC6D18E6C4E300F2D2F0 /* TK_CurrentLocationViewController.m in Sources */,
 				D03CE82018E661F8007372AC /* SocketIOPacket.m in Sources */,
 				D031B95218E6A1CC00E1B14A /* TK_APIModel.m in Sources */,
 				D07CFC9518E65E48000E45F7 /* TKAppDelegate.m in Sources */,
 				D03CE83018E664DE007372AC /* TK_UserCourseViewController.m in Sources */,
 				D031B94218E67A7C00E1B14A /* PLHUDView.m in Sources */,
+				D0D4EC7218E6D7D400F2D2F0 /* TK_ActAsBeaconViewController.m in Sources */,
 				D031B94718E689A900E1B14A /* TK_UserCourseCollectionViewCell.m in Sources */,
 				D03CE80D18E661AD007372AC /* HTMLParser.m in Sources */,
 				D03CE81F18E661F8007372AC /* SocketIOJSONSerialization.m in Sources */,

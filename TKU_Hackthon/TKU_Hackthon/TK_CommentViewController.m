@@ -8,18 +8,26 @@
 
 #import "TK_CommentViewController.h"
 #import <JSMessage.h>
+#import "TK_PlistModel.h"
+#import "TK_WebSocket.h"
+#import "PLHUDView.h"
 
 @interface TK_CommentViewController ()
 
 @end
 
 @implementation TK_CommentViewController
-
+{
+    TK_PlistModel *plistModel;
+    TK_WebSocket *webSocket;
+    PLHUDView *hudView;
+}
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        
     }
     return self;
 }
@@ -29,6 +37,8 @@
     [super viewDidLoad];
     self.dataSource=self;
     self.delegate=self;
+    plistModel =[TK_PlistModel shareInstance];
+    webSocket =[TK_WebSocket shareInstance];
     
     UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithTitle:@"Show" style:UIBarButtonItemStylePlain target:self action:@selector(showMenu)];
     self.navigationItem.leftBarButtonItem = anotherButton;
@@ -43,8 +53,7 @@
                      [[JSMessage alloc] initWithText:@"歡迎使用 提問系統  右上角 可以選擇發送對象" sender:@"user" date:[NSDate distantPast]],
                      nil];
     
-    
-    
+ 
 
     self.avatars = [[NSDictionary alloc] initWithObjectsAndKeys:
                     [JSAvatarImageFactory avatarImageNamed:@"avatar-placeholder" croppedToCircle:YES], @"user",
@@ -52,7 +61,29 @@
     
     UIBarButtonItem *rightButton= [[UIBarButtonItem alloc] initWithTitle:@"to All" style:UIBarButtonItemStylePlain target:self action:@selector(changeTarget:)];
     self.navigationItem.rightBarButtonItem = rightButton;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(SocketIsConnect:) name:kWebSocketIsConnect object:nil];
     // Do any additional setup after loading the view from its nib.
+}
+-(void) viewWillAppear:(BOOL)animated
+{
+    if(!webSocket.socketIO.isConnected)
+    {
+        self.title =@"提問(未連線)";
+    }
+    
+
+}
+-(void) SocketIsConnect: (NSNotification *) noti
+{
+    if(!webSocket.socketIO.isConnected)
+    {
+        self.title =@"提問(未連線)";
+    }
+    else
+    {
+        self.title = @"提問(已連線)";
+    }
 }
 -(void) showMenu
 {
@@ -79,6 +110,15 @@
 
 - (void)didSendText:(NSString *)text fromSender:(NSString *)sender onDate:(NSDate *)date
 {
+    
+        //"你不在 指定的教室喔 無法連線" message:@"請到教室"
+    if(!webSocket.socketIO.isConnected)
+    {
+        UIAlertView *alert =[[UIAlertView alloc] initWithTitle:@"你不在 指定的教室喔 無法連線" message:@"請到教室" delegate:nil cancelButtonTitle:@"確定" otherButtonTitles:nil, nil];
+        [alert show];
+        return;
+    }
+    
     if ((self.messages.count - 1) % 2) {
         [JSMessageSoundEffect playMessageSentSound];
     }

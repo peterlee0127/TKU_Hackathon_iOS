@@ -9,13 +9,16 @@
 #import "TK_UserCourseViewController.h"
 #import "TK_PlistModel.h"
 #import "TK_UserCourseCollectionViewCell.h"
+#import "TK_WebSocket.h"
 
 @interface TK_UserCourseViewController ()
 
 @end
 
 @implementation TK_UserCourseViewController
-
+{
+    TK_WebSocket *websocket;
+}
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -29,6 +32,8 @@
 {
     [super viewDidLoad];
     TK_PlistModel *plist = [TK_PlistModel shareInstance];
+    websocket =[TK_WebSocket shareInstance];
+    
     self.courseArray = [plist loadUserCourse];
     
     

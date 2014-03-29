@@ -14,11 +14,12 @@
 #import "TK_LoginViewController.h"
 #import "TK_UserCourseViewController.h"
 #import "TK_CommentViewController.h"
-
+#import "TK_CurrentLocationViewController.h"
 
 @implementation TKAppDelegate
 {
     TK_PlistModel *plistModel;
+    TK_WebSocket *webSocket;
 }
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -35,11 +36,9 @@
     }
     else
     {
-        TK_LoginViewController *loginVC =[[TK_LoginViewController alloc] initWithNibName:@"TK_LoginViewController" bundle:nil];
-        self.navVC = [[UINavigationController alloc] initWithRootViewController:loginVC];
-        self.window.rootViewController =self.navVC;
+        [self showLoginViewController];
     }
-    [TK_WebSocket shareInstance];
+    webSocket =[TK_WebSocket shareInstance];
     [TK_BLEModel shareInstance];
     
     [self.window makeKeyAndVisible];
@@ -60,6 +59,8 @@
 {
     NSNumber * number = [noti object];
     NSUInteger index = [number integerValue];
+    if([plistModel UserIsAdmin])
+    {
     switch (index) {
         case 0:
         {
@@ -70,23 +71,84 @@
         }
         case 1:
         {
+            [self checkUserIsInClass];
             TK_CommentViewController *frontVC=[[TK_CommentViewController alloc] initWithNibName:@"TK_CommentViewController" bundle:nil];
-        
             self.navVC =[[UINavigationController alloc] initWithRootViewController:frontVC];
             break;
         }
         case 2:
         {
+            TK_CurrentLocationViewController *frontVC=[[TK_CurrentLocationViewController alloc] initWithNibName:@"TK_CurrentLocationViewController" bundle:nil];
+        
+            self.navVC =[[UINavigationController alloc] initWithRootViewController:frontVC];
+            break;
+        }
+        case 3:
+        {
+            break;
+        }
+        case 4:
+        {
+            [self showLoginViewController];
+            return;
             break;
         }
         default:
             break;
     }
-    
+    }
+    else
+    {
+            switch (index) {
+                case 0:
+                {
+                    TK_UserCourseViewController *frontVC=[[TK_UserCourseViewController alloc] initWithNibName:@"TK_UserCourseViewController" bundle:nil];
+                
+                    self.navVC =[[UINavigationController alloc] initWithRootViewController:frontVC];
+                    break;
+                }
+                case 1:
+                {
+                    [self checkUserIsInClass];
+                    TK_CommentViewController *frontVC=[[TK_CommentViewController alloc] initWithNibName:@"TK_CommentViewController" bundle:nil];
+                    self.navVC =[[UINavigationController alloc] initWithRootViewController:frontVC];
+                    break;
+                }
+                case 2:
+                {
+                    TK_CurrentLocationViewController *frontVC=[[TK_CurrentLocationViewController alloc] initWithNibName:@"TK_CurrentLocationViewController" bundle:nil];
+                
+                    self.navVC =[[UINavigationController alloc] initWithRootViewController:frontVC];
+                    break;
+                }
+                case 3:
+                {
+                    break;
+                }
+                case 4:
+                {
+                    [self showLoginViewController];
+                    return;
+                    break;
+                }
+                default:
+                    break;
+            }
+    }
     
     [self.revealViewController setFrontViewController:self.navVC];
     [self.revealViewController setMinimumWidth:160 maximumWidth:170 forViewController:self.menuViewController];
     [self showMenu];
+}
+-(void) checkUserIsInClass
+{
+    if(!webSocket.socketIO.isConnected)
+    {
+        UIAlertView *alert =[[UIAlertView alloc] initWithTitle:@"你不在 指定的教室喔 無法連線" message:@"請到教室" delegate:nil cancelButtonTitle:@"確定" otherButtonTitles:nil, nil];
+        [alert show];
+    
+        return;
+    }
 }
 -(void) showRevalViewController
 {
@@ -101,6 +163,12 @@
     
     self.window.rootViewController = self.revealViewController;
  
+}
+-(void) showLoginViewController
+{
+    TK_LoginViewController *loginVC =[[TK_LoginViewController alloc] initWithNibName:@"TK_LoginViewController" bundle:nil];
+    self.navVC = [[UINavigationController alloc] initWithRootViewController:loginVC];
+    self.window.rootViewController =self.navVC;
 }
 -(void) showMenu
 {

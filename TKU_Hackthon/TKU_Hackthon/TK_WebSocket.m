@@ -8,12 +8,14 @@
 
 #import "TK_WebSocket.h"
 #import "TK_PlistModel.h"
+#import "TK_APIModel.h"
 #import <AVFoundation/AVFoundation.h>
 #import <MediaPlayer/MediaPlayer.h>
 
 @implementation TK_WebSocket
 {
     TK_PlistModel *plistModel;
+    
     NSMutableArray *rangeArray;
     NSString *userInRoom;
 }
@@ -49,7 +51,7 @@
     NSDictionary *dict =(NSDictionary *)[noti object];
     if([dict[@"distance"] floatValue] < -0.5)
     {
-        userInRoom = @"NOS";
+        userInRoom = @"NO";
         [self.socketIO disconnect];
     }
     else
@@ -58,13 +60,13 @@
         if(!self.socketIO.isConnected)
         {
             [self connectToServer];
-        MPMusicPlayerController *player =[[MPMusicPlayerController alloc] init];
-        player.volume=0.0;
-
+            MPMusicPlayerController *player =[[MPMusicPlayerController alloc] init];
+//            player.volume=0.0;
+        
     
         }
     }
-    NSLog(@"%@",userInRoom);
+//    NSLog(@"%@",userInRoom);
     /*
     if(rangeArray.count==0)
        [rangeArray addObject:dict];
@@ -92,15 +94,18 @@
 }
 - (void) socketIODidConnect:(SocketIO *)socket
 {
-    
-    NSDictionary *addmeDict = [NSDictionary dictionaryWithObjectsAndKeys:@"",@"stu_id",
-                                                                        @"",@"class_id"
+    TK_APIModel *api =[TK_APIModel shareInstance];
+    NSString *class =api.classArray[0][@"_id"];
+    NSDictionary *addmeDict = [NSDictionary dictionaryWithObjectsAndKeys:[plistModel loadUserInfo][kstu_id],@"stu_id",
+                                                                        class,@"class_id"
                                ,nil];
     [self.socketIO sendEvent:@"addme" withData:addmeDict];
+    
+      [[NSNotificationCenter defaultCenter] postNotificationName:kWebSocketIsConnect object:[NSNumber numberWithBool:YES]];
 }
 - (void) socketIODidDisconnect:(SocketIO *)socket disconnectedWithError:(NSError *)error
 {
-    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kWebSocketIsConnect object:[NSNumber numberWithBool:NO]];
 }
 - (void) socketIO:(SocketIO *)socket didReceiveEvent:(SocketIOPacket *)packet
 {

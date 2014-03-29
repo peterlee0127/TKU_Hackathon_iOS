@@ -34,13 +34,13 @@
     plistModel =[TK_PlistModel shareInstance];
     if([plistModel UserIsAdmin])
     {
-        self.menuArray =[NSArray arrayWithObjects:@"我的課表",@"意見",@"1",@"發送訊號",@"登出", nil];
+        self.menuArray =[NSArray arrayWithObjects:@"我的課表",@"意見",@"在線",@"發送訊號",@"登出", nil];
         
         self.menuImageArray = [NSArray arrayWithObjects:@"",@"",@"",@"",@"", nil];
     }
     else
     {
-        self.menuArray =[NSArray arrayWithObjects:@"我的課表",@"意見",@"1",@"3",@"登出", nil];
+        self.menuArray =[NSArray arrayWithObjects:@"我的課表",@"意見",@"目前位置",@"3",@"登出", nil];
     
         self.menuImageArray = [NSArray arrayWithObjects:@"",@"",@"",@"",@"", nil];
     }

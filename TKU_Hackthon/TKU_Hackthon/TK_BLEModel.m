@@ -37,6 +37,7 @@
         apiModel = [TK_APIModel shareInstance];
         apiModel.delegate=self;
         [apiModel downloadBeaconInf];
+        [apiModel downloadClassInf];
         count=0;
     }
     return self;
@@ -107,6 +108,9 @@
         [self addBeacon:region];
     }];
 }
+-(void) classInf:(NSArray *)data
+{
 
+}
 
 @end

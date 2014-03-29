@@ -15,11 +15,12 @@
 
 
 @property (nonatomic,strong) NSArray *beaconArray;
+@property (nonatomic,strong) NSArray *classArray;
 @property (nonatomic,weak) id <TK_APIDelegate> delegate;
 
 +(instancetype) shareInstance;
 - (void) downloadBeaconInf;
-
+-(void) downloadClassInf;
 
 
 @end
@@ -27,5 +28,6 @@
 @protocol TK_APIDelegate
 
 -(void) beaconInf:(NSArray *) data;
+-(void) classInf :(NSArray *) data;
 
 @end
