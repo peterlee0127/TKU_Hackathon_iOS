@@ -14,7 +14,7 @@
 
 
 @property (nonatomic,strong) SocketIO *socketIO;
-
+@property (nonatomic,strong) NSMutableArray *messageArray;
 
 
 

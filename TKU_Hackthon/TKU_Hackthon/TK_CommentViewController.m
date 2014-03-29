@@ -21,6 +21,8 @@
     TK_PlistModel *plistModel;
     TK_WebSocket *webSocket;
     PLHUDView *hudView;
+    NSString *userName;
+    NSString *target ;
 }
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,45 +37,48 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+ 
+    plistModel =[TK_PlistModel shareInstance];
+    userName = [plistModel loadUserInfo][kstu_id];
+    
+    webSocket =[TK_WebSocket shareInstance];
+   self.messages  =webSocket.messageArray;
+    
     self.dataSource=self;
     self.delegate=self;
-    plistModel =[TK_PlistModel shareInstance];
-    webSocket =[TK_WebSocket shareInstance];
     
     UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithTitle:@"Show" style:UIBarButtonItemStylePlain target:self action:@selector(showMenu)];
     self.navigationItem.leftBarButtonItem = anotherButton;
     
-    self.title = @"提問";
+    self.title = @"提問(未連線)";
     
-    self.messageInputView.textView.placeHolder = @"Your placeholder text";
+    self.messageInputView.textView.placeHolder = @"請在此輸入訊息";
     
-    self.sender = @"Username of sender";
-    
-    self.messages = [[NSMutableArray alloc] initWithObjects:
-                     [[JSMessage alloc] initWithText:@"歡迎使用 提問系統  右上角 可以選擇發送對象" sender:@"user" date:[NSDate distantPast]],
-                     nil];
-    
+    self.sender = userName;
  
 
     self.avatars = [[NSDictionary alloc] initWithObjectsAndKeys:
-                    [JSAvatarImageFactory avatarImageNamed:@"avatar-placeholder" croppedToCircle:YES], @"user",
+                    [JSAvatarImageFactory avatarImageNamed:@"avatar-placeholder" croppedToCircle:YES], userName,
                     nil];
     
     UIBarButtonItem *rightButton= [[UIBarButtonItem alloc] initWithTitle:@"to All" style:UIBarButtonItemStylePlain target:self action:@selector(changeTarget:)];
     self.navigationItem.rightBarButtonItem = rightButton;
+    target =@"All";
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(SocketIsConnect:) name:kWebSocketIsConnect object:nil];
     // Do any additional setup after loading the view from its nib.
-}
--(void) viewWillAppear:(BOOL)animated
-{
+    
     if(!webSocket.socketIO.isConnected)
     {
         self.title =@"提問(未連線)";
     }
-    
-
+    else
+    {
+        self.title = @"提問(已連線)";
+    }
 }
+
 -(void) SocketIsConnect: (NSNotification *) noti
 {
     if(!webSocket.socketIO.isConnected)
@@ -94,10 +99,15 @@
 -(void) changeTarget :(UIBarButtonItem *) sender
 {
     if([sender.title isEqualToString:@"to All"])
+    {
         sender.title = @"Teacher";
+        target =@"Teacher";
+    }
     else
+    {
         sender.title = @"to All";
-    
+        target =@"All";
+    }
 }
 #pragma mark - Table view data source
 
@@ -118,31 +128,46 @@
         [alert show];
         return;
     }
+
+    [JSMessageSoundEffect playMessageSentSound];
+  
     
-    if ((self.messages.count - 1) % 2) {
-        [JSMessageSoundEffect playMessageSentSound];
-    }
-    else {
-            // for demo purposes only, mimicing received messages
-        [JSMessageSoundEffect playMessageReceivedSound];
-        sender = arc4random_uniform(10) % 2 ? @"user" : @"other";
-    }
+    NSDictionary *dict =[NSDictionary dictionaryWithObjectsAndKeys:
+                        target,ktarget,
+                         text,kmessage,
+                         userName ,kstu_id
+                         ,nil];
     
-    [self.messages addObject:[[JSMessage alloc] initWithText:text sender:sender date:date]];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kUserSendChat object:dict];
+
+
+
+//    [self.messages addObject:[[JSMessage alloc] initWithText:text sender:sender date:date]];
     
     [self finishSend];
     [self scrollToBottomAnimated:YES];
 }
 
+
+
 - (JSBubbleMessageType)messageTypeForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return (indexPath.row % 3) ? JSBubbleMessageTypeIncoming : JSBubbleMessageTypeOutgoing;
+    
+    JSMessage *message =self.messages[indexPath.row];
+    
+    if(![message.sender isEqualToString:userName])
+        return JSBubbleMessageTypeIncoming;
+    else
+        return JSBubbleMessageTypeOutgoing;
+    
+
 }
 
 - (UIImageView *)bubbleImageViewWithType:(JSBubbleMessageType)type
                        forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row % 3) {
+    JSMessage *message =self.messages[indexPath.row];
+    if (![message.sender isEqualToString:userName]) {
         return [JSBubbleImageViewFactory bubbleImageViewForType:type
                                                           color:[UIColor js_bubbleLightGrayColor]];
     }

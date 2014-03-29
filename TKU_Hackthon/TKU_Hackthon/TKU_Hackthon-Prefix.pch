@@ -27,5 +27,11 @@ static NSString * const kUserIsAdmin = @"kUserIsAdmin";
 static NSString * const kUserCourse = @"kUserCourse";
 static NSString * const kUserIsInClass = @"kUserIsInClass";
 
-
+static NSString *const kUserSendChat = @"kUserSendChat";
 static NSString *const kWebSocketIsConnect = @"kWebSocketIsConnect";
+
+static NSString *const ktarget = @"target";
+static NSString *const kmessage = @"message";
+
+
+

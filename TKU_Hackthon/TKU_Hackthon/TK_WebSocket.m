@@ -11,6 +11,7 @@
 #import "TK_APIModel.h"
 #import <AVFoundation/AVFoundation.h>
 #import <MediaPlayer/MediaPlayer.h>
+#import <JSMessage.h>
 
 @implementation TK_WebSocket
 {
@@ -34,8 +35,12 @@
     if(self)
     {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userLocation:) name:kUserIsInClass object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sendChatMessage:) name:kUserSendChat object:nil];
         rangeArray =[[NSMutableArray alloc] init];
         userInRoom = @"NO";
+        self.messageArray=[[NSMutableArray alloc] initWithObjects:
+                           [[JSMessage alloc] initWithText:@"歡迎使用 提問系統  右上角 可以選擇發送對象" sender:@"system" date:[NSDate distantPast]],
+                           nil];
     }
     return self;
 }
@@ -109,7 +114,20 @@
 }
 - (void) socketIO:(SocketIO *)socket didReceiveEvent:(SocketIOPacket *)packet
 {
-
+    if([packet.name isEqualToString:@"addmeRes"])
+    {
+        NSData *data = [packet.data dataUsingEncoding:NSUTF8StringEncoding];
+        id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        
+        if([(NSString *)(json[@"args"][0][@"status"])  isEqualToString:@"YES"] )
+            NSLog(@"success");
+    }
+    else if([packet.name isEqualToString:@"ListenChat"])
+    {
+        NSData *data = [packet.data dataUsingEncoding:NSUTF8StringEncoding];
+        id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        NSLog(@"listenChat:%@",json);
+    }
 }
 - (void) socketIO:(SocketIO *)socket didSendMessage:(SocketIOPacket *)packet
 {
@@ -118,6 +136,20 @@
 - (void) socketIO:(SocketIO *)socket onError:(NSError *)error
 {
 
+}
+
+-(void) sendChatMessage:(NSNotification *) noti
+{
+    NSDictionary *temp =(NSDictionary * ) [noti object];
+
+    NSDictionary *dict =[NSDictionary dictionaryWithObjectsAndKeys:
+                            temp[ktarget],@"target",
+                             temp[kmessage],@"message",
+                            temp[kstu_id],@"stu_id", nil];
+    [self.socketIO sendEvent:@"chat" withData:dict];
+    
+    JSMessage *message =[[JSMessage alloc] initWithText:temp[kmessage] sender:temp[kstu_id] date:[NSDate distantPast]];
+    [self.messageArray addObject:message];
 }
 
 
