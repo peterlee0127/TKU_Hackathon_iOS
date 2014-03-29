@@ -14,8 +14,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    self.window =[[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.365 green:0.314 blue:0.294 alpha:1.000]];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showMenu) name:@"kShowMenuViewController" object:nil];
+    
+    self.window =[[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
     
    self.menuViewController =[[TK_MenuViewController alloc] initWithNibName:@"TK_MenuViewController" bundle:nil];
@@ -24,12 +29,10 @@
     
     self.navVC =[[UINavigationController alloc] initWithRootViewController:frontVC];
     
-    self.navVC.navigationItem.leftBarButtonItem =[[UIBarButtonItem alloc] initWithTitle:@"Menu" style:UIBarButtonItemStylePlain target:self action:@selector(showMenu)];
-    
     
     self.revealViewController =[PKRevealController revealControllerWithFrontViewController:self.navVC leftViewController:self.menuViewController];
     
-    
+
     self.window.rootViewController = self.revealViewController;
     [self.window makeKeyAndVisible];
     

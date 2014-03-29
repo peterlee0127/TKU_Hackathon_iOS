@@ -24,6 +24,8 @@
 		D03CE82C18E6642C007372AC /* TK_MenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D03CE82A18E6642C007372AC /* TK_MenuTableViewCell.xib */; };
 		D03CE83018E664DE007372AC /* TK_FrontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D03CE82E18E664DE007372AC /* TK_FrontViewController.m */; };
 		D03CE83118E664DE007372AC /* TK_FrontViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D03CE82F18E664DE007372AC /* TK_FrontViewController.xib */; };
+		D03CE83418E66AB6007372AC /* TK_TopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D03CE83318E66AB6007372AC /* TK_TopViewController.m */; };
+		D03CE83718E66C5E007372AC /* TK_PlistModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D03CE83618E66C5E007372AC /* TK_PlistModel.m */; };
 		D07CFC8518E65E48000E45F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D07CFC8418E65E48000E45F7 /* Foundation.framework */; };
 		D07CFC8718E65E48000E45F7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D07CFC8618E65E48000E45F7 /* CoreGraphics.framework */; };
 		D07CFC8918E65E48000E45F7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D07CFC8818E65E48000E45F7 /* UIKit.framework */; };
@@ -65,6 +67,10 @@
 		D03CE82D18E664DE007372AC /* TK_FrontViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_FrontViewController.h; sourceTree = "<group>"; };
 		D03CE82E18E664DE007372AC /* TK_FrontViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_FrontViewController.m; sourceTree = "<group>"; };
 		D03CE82F18E664DE007372AC /* TK_FrontViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TK_FrontViewController.xib; sourceTree = "<group>"; };
+		D03CE83218E66AB6007372AC /* TK_TopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_TopViewController.h; sourceTree = "<group>"; };
+		D03CE83318E66AB6007372AC /* TK_TopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_TopViewController.m; sourceTree = "<group>"; };
+		D03CE83518E66C5E007372AC /* TK_PlistModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_PlistModel.h; sourceTree = "<group>"; };
+		D03CE83618E66C5E007372AC /* TK_PlistModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_PlistModel.m; sourceTree = "<group>"; };
 		D07CFC8118E65E48000E45F7 /* TKU_Hackthon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TKU_Hackthon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D07CFC8418E65E48000E45F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D07CFC8618E65E48000E45F7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -104,6 +110,8 @@
 		D03CE80118E6616A007372AC /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				D03CE83218E66AB6007372AC /* TK_TopViewController.h */,
+				D03CE83318E66AB6007372AC /* TK_TopViewController.m */,
 				D03CE82718E66412007372AC /* Menu */,
 				D03CE82D18E664DE007372AC /* TK_FrontViewController.h */,
 				D03CE82E18E664DE007372AC /* TK_FrontViewController.m */,
@@ -224,6 +232,8 @@
 			children = (
 				D03CE80F18E661BF007372AC /* TKU_CourseSearch.h */,
 				D03CE81018E661BF007372AC /* TKU_CourseSearch.m */,
+				D03CE83518E66C5E007372AC /* TK_PlistModel.h */,
+				D03CE83618E66C5E007372AC /* TK_PlistModel.m */,
 				D0D96D6018E65EF40084DFF5 /* TK_BLEModel.h */,
 				D0D96D6118E65EF40084DFF5 /* TK_BLEModel.m */,
 				D0D96D6318E65F1A0084DFF5 /* TK_WebSocket.h */,
@@ -337,6 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D03CE82218E661F8007372AC /* SocketIOTransportXHR.m in Sources */,
+				D03CE83418E66AB6007372AC /* TK_TopViewController.m in Sources */,
 				D0D96D6518E65F1A0084DFF5 /* TK_WebSocket.m in Sources */,
 				D07CFC9118E65E48000E45F7 /* main.m in Sources */,
 				D03CE82B18E6642C007372AC /* TK_MenuTableViewCell.m in Sources */,
@@ -344,6 +355,7 @@
 				D03CE81E18E661F8007372AC /* SocketIO.m in Sources */,
 				D03CE82118E661F8007372AC /* SocketIOTransportWebsocket.m in Sources */,
 				D0D96D6218E65EF40084DFF5 /* TK_BLEModel.m in Sources */,
+				D03CE83718E66C5E007372AC /* TK_PlistModel.m in Sources */,
 				D03CE82018E661F8007372AC /* SocketIOPacket.m in Sources */,
 				D07CFC9518E65E48000E45F7 /* TKAppDelegate.m in Sources */,
 				D03CE83018E664DE007372AC /* TK_FrontViewController.m in Sources */,

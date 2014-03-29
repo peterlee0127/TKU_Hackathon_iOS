@@ -16,5 +16,7 @@
 #endif
 
 
-static const  NSString  *defaultSever = @"localhost";
-const static NSString *defaultPort = @"8080";
+static  NSString * const  defaultSever = @"localhost";
+static  NSString * const defaultPort = @"8080";
+static  NSString * const kShowMenuViewController = @"kShowMenuViewController";
+static  NSString * const defaultFont = @"Helvetica-Light";
