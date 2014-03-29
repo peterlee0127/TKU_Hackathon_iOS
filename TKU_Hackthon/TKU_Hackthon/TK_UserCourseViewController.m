@@ -31,6 +31,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title =@"學生課表";
+    
     TK_PlistModel *plist = [TK_PlistModel shareInstance];
     websocket =[TK_WebSocket shareInstance];
     

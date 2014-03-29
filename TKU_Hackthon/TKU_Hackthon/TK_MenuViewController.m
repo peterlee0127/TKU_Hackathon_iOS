@@ -34,15 +34,18 @@
     plistModel =[TK_PlistModel shareInstance];
     if([plistModel UserIsAdmin])
     {
-        self.menuArray =[NSArray arrayWithObjects:@"我的課表",@"意見",@"目前位置",@"在線名單",@"投票",@"發送BLE訊號",@"登出", nil];
+        self.menuArray =[NSArray arrayWithObjects:@"意見",@"目前位置",@"在線名單",@"投票",@"發送BLE訊號",@"登出", nil];
         
-        self.menuImageArray = [NSArray arrayWithObjects:@"",@"",@"",@"",@"", nil];
+        self.menuImageArray = [NSArray arrayWithObjects:@"chat.png",@"location.png",
+                               @"name_list.png",
+                               @"vote.png",@"beacon.png",@"leave.png", nil];
     }
     else
     {
-        self.menuArray =[NSArray arrayWithObjects:@"我的課表",@"意見",@"目前位置",@"3",@"登出", nil];
+        self.menuArray =[NSArray arrayWithObjects:@"我的課表",@"意見",@"目前位置",@"登出", nil];
     
-        self.menuImageArray = [NSArray arrayWithObjects:@"",@"",@"",@"",@"", nil];
+        self.menuImageArray = [NSArray arrayWithObjects:@"class.png",@"chat.png",
+                               @"location.png",@"leave.png", nil];
     }
     self.tableView =[[UITableView alloc] initWithFrame:CGRectMake(0, 40, self.view.frame.size.width, [UIScreen mainScreen].bounds.size.height-40) style:UITableViewStylePlain];
     [self.tableView registerNib:[UINib nibWithNibName:@"TK_MenuTableViewCell" bundle:nil] forCellReuseIdentifier:@"MenuCell"];
@@ -72,13 +75,14 @@
     TK_MenuTableViewCell *cell =[self.tableView dequeueReusableCellWithIdentifier:@"MenuCell"];
     cell.menuLabel.text =self.menuArray[indexPath.row];
     cell.backgroundColor =[UIColor clearColor];
+    [cell.menuImageView setImage:[UIImage imageNamed:self.menuImageArray[indexPath.row]]];
     
     return cell;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 120.0f;
+    return 160.0f;
 }
 #pragma mark - UITableView Delegate
 

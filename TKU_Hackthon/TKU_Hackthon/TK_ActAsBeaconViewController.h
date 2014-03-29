@@ -7,7 +7,9 @@
 //
 
 #import "TK_TopViewController.h"
+#import <CoreBluetooth/CoreBluetooth.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface TK_ActAsBeaconViewController : TK_TopViewController
+@interface TK_ActAsBeaconViewController : TK_TopViewController <CBPeripheralManagerDelegate>
 
 @end

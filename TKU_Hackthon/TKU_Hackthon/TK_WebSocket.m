@@ -36,6 +36,8 @@
     {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userLocation:) name:kUserIsInClass object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sendChatMessage:) name:kUserSendChat object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(force_change:) name:kforceChangeCome object:nil];
+    
         rangeArray =[[NSMutableArray alloc] init];
         userInRoom = @"NO";
         self.messageArray=[[NSMutableArray alloc] initWithObjects:
@@ -71,31 +73,7 @@
     
         }
     }
-//    NSLog(@"%@",userInRoom);
-    /*
-    if(rangeArray.count==0)
-       [rangeArray addObject:dict];
-    
-    [rangeArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        NSDictionary *temp = (NSDictionary *) obj;
-        if([dict[@"room"] isEqualToString:temp[@"room"]])
-        {
-            [rangeArray removeObjectAtIndex:idx];
-            [rangeArray addObject:dict];
-        }
-        else
-            [rangeArray addObject:dict];
-    }];
-    
 
-    __block NSDictionary *minum = rangeArray[0];
-    [rangeArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        NSDictionary *temp =(NSDictionary *) obj;
-        if([minum[@"distance"] floatValue] > [temp[@"distance"] floatValue])
-            minum = temp;
-    }];
-    NSLog(@"%@",minum);
-     */
 }
 - (void) socketIODidConnect:(SocketIO *)socket
 {
@@ -128,6 +106,7 @@
         id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
     
     
+    
         NSDictionary *dict =json[@"args"][0];
     
         if(![plistModel UserIsAdmin])
@@ -142,7 +121,44 @@
     
         [[NSNotificationCenter defaultCenter] postNotificationName:@"receiveMessage" object:nil];
     }
+    else if([packet.name isEqualToString:@"start_vote"])
+    {
+        NSData *data = [packet.data dataUsingEncoding:NSUTF8StringEncoding];
+        id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+    
+    
+    
+        NSDictionary *dict =json[@"args"][0];
+    
+        [[NSNotificationCenter defaultCenter] postNotificationName:kstart_Vote object:dict];
+    
+    }
+    else if([packet.name isEqualToString:@"end_vote"])
+    {
+        NSData *data = [packet.data dataUsingEncoding:NSUTF8StringEncoding];
+        id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        
+        
+        
+        NSDictionary *dict =json[@"args"][0];
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:kend_vote object:dict];
+        
+    }
+    else if([packet.name isEqualToString:@"vote_result"])
+    {
+        NSData *data = [packet.data dataUsingEncoding:NSUTF8StringEncoding];
+        id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        
+        
+        
+        NSDictionary *dict =json[@"args"][0];
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:kend_vote object:dict];
+        
+    }
 }
+
 - (void) socketIO:(SocketIO *)socket didSendMessage:(SocketIOPacket *)packet
 {
 
@@ -165,7 +181,23 @@
     JSMessage *message =[[JSMessage alloc] initWithText:temp[kmessage] sender:temp[kstu_id] date:[NSDate date]];
     [self.messageArray addObject:message];
 }
+-(void) force_change :(NSNotification * ) noti
+{
+    NSDictionary *dict =[noti object];
+    
+    [self.socketIO sendEvent:@"force_change_Come" withData:dict];
+}
 
+#pragma mark - kVote
+
+/*
+ static NSString *const kReqVote = @"kReqVote";
+ static NSString *const kstart_Vote @"kstart_Vote";
+ static NSString *const kvoting = @"kvoting";
+ static NSString *const kvoting_res = @"kvoting_res";
+ static NSString *const kend_vote = @"kend_vote";
+ 
+ */
 
 
 @end

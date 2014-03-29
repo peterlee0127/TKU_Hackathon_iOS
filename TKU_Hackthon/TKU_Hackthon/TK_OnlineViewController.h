@@ -9,6 +9,10 @@
 #import "TK_TopViewController.h"
 #import <AFNetworking.h>
 
-@interface TK_OnlineViewController : TK_TopViewController
+@interface TK_OnlineViewController : TK_TopViewController <UITableViewDataSource,UITableViewDelegate>
+
+
+@property (nonatomic,strong) NSArray *tableArray;
+@property (nonatomic,strong) UITableView *tableView;
 
 @end

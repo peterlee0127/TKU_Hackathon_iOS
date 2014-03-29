@@ -30,6 +30,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title =@"使用者登入";
+    
     plistModel =[TK_PlistModel shareInstance];
     NSDictionary *userDict =[plistModel loadUserInfo];
     self.accountTextField.text=userDict[kstu_id];
@@ -59,6 +61,11 @@
     
 
     [plistModel saveUserInfo:self.accountTextField.text andPass:self.passwordTextField.text];
+    if([plistModel UserIsAdmin])
+    {
+         [[NSNotificationCenter defaultCenter] postNotificationName:@"kLoginSuccess" object:nil];
+        return;
+    }
     PLHUDView *hud =[[PLHUDView alloc]initHUDWithType:HUDActivityIndicatorType];
     [hud setHUDTitle:@"登入中"];
     hud.HUDAlpha=0.7;

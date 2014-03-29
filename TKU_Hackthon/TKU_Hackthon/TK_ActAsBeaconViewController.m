@@ -7,8 +7,7 @@
 //
 
 #import "TK_ActAsBeaconViewController.h"
-#import <CoreBluetooth/CoreBluetooth.h>
-#import <CoreLocation/CoreLocation.h>
+
 
 @interface TK_ActAsBeaconViewController ()
 {
@@ -38,6 +37,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title =@"模擬Beacon訊號";
+    
     bigCircleView = [[UIView alloc] initWithFrame:CGRectMake(0,20,320,320)];
     bigCircleView.alpha = 0.5;
     bigCircleView.layer.cornerRadius = bigCircleView.frame.size.width/2;
@@ -56,18 +57,47 @@
     smallCircleView.backgroundColor =[UIColor greenColor];
     [self.view addSubview:smallCircleView];
     
+    
+    peripheralManager = [[CBPeripheralManager alloc] initWithDelegate:self queue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(40, [UIScreen mainScreen].bounds.size.height-140, 240, 60)];
+    label.font = [UIFont fontWithName:defaultFont size:22];
+    label.text = @"Monitoring G315";
+    label.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:label];
     // Do any additional setup after loading the view from its nib.
+}
+-(void) viewWillDisappear:(BOOL)animated
+{
+    [peripheralManager stopAdvertising];
+}
+
+-(void)peripheralManagerDidUpdateState:(CBPeripheralManager *)peripheral{
+    if(peripheral.state==CBPeripheralManagerStatePoweredOn)
+        [self startActAsBeacon];
+    
 }
 -(void) startActAsBeacon
 {
+  
+ 
+    
+    [peripheralManager stopAdvertising];
         // We must construct a CLBeaconRegion that represents the payload we want the device to beacon.
     NSDictionary *peripheralData = nil;
     
-    CLBeaconRegion *region = [[CLBeaconRegion alloc] initWithProximityUUID:uuid major:[major shortValue] minor:[minor shortValue] identifier:BeaconIdentifier];
+    /*
+     "beacon_id":"1618E6B0-7912-4A22-8464-7042987A7F58",
+     "class_room":"E405",
+     "major":"0",
+     "minor":"0"
+     */
+
+    CLBeaconRegion *region = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"92FEC112-0AFB-43B0-8B80-14192A537E86"] major:0 minor:2 identifier:@"G315"];
     peripheralData = [region peripheralDataWithMeasuredPower:[NSNumber numberWithDouble:-59]];
     
         // The region's peripheral data contains the CoreBluetooth-specific data we need to advertise.
-    if(peripheralData)        {
+    if(peripheralData)
+    {
         [peripheralManager startAdvertising:peripheralData];
     }
 

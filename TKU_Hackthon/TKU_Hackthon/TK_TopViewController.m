@@ -26,7 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithTitle:@"Show" style:UIBarButtonItemStylePlain target:self action:@selector(showMenu)];
+    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithTitle:@""  style:UIBarButtonItemStylePlain target:self action:@selector(showMenu)];
     self.navigationItem.leftBarButtonItem = anotherButton;
     
     self.edgesForExtendedLayout = UIRectEdgeNone;
@@ -36,7 +36,7 @@
     
     self.navigationController.navigationBar.translucent = NO;
     
-    UIImage *image = [UIImage imageNamed:@"navbarbg.png"];
+    UIImage *image = [UIImage imageNamed:@"nav.png"];
     [[UINavigationBar appearance] setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
     
         // Setting All NavgationBar Title

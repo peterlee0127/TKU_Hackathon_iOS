@@ -8,6 +8,12 @@
 
 #import "TK_TopViewController.h"
 
-@interface TK_Vote_GraphViewController : TK_TopViewController
+@interface TK_Vote_GraphViewController : TK_TopViewController <UITableViewDataSource,UITableViewDelegate>
+
+
+@property (nonatomic,strong) IBOutlet UITableView *tableView;
+@property (nonatomic,strong) NSArray *tableArray;
+
 
 @end
+

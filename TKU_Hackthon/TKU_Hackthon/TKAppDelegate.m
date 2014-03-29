@@ -17,6 +17,8 @@
 #import "TK_CurrentLocationViewController.h"
 #import "TK_ReqVoteViewController.h"
 #import "TK_OnlineViewController.h"
+#import "TK_ActAsBeaconViewController.h"
+#import "TK_VoteViewController.h"
 
 @implementation TKAppDelegate
 {
@@ -31,7 +33,7 @@
     self.window =[[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
     plistModel = [TK_PlistModel shareInstance];
-    if([plistModel loadUserCourse].count>0)
+    if(![([plistModel loadUserInfo][kstu_id]) isEqualToString:@""])
     {
         // already login
         [self showRevalViewController];
@@ -56,6 +58,9 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showRevalViewController) name:@"kLoginSuccess" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showMenu) name:@"kShowMenuViewController" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeViewController:) name:@"kchangeViewController" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showVoteViewController:) name:kstart_Vote object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(endVoteViewController:) name:kend_vote object:nil];
+    
 }
 -(void) changeViewController :(NSNotification *) noti
 {
@@ -66,46 +71,44 @@
     switch (index) {
         case 0:
         {
-            TK_UserCourseViewController *frontVC=[[TK_UserCourseViewController alloc] initWithNibName:@"TK_UserCourseViewController" bundle:nil];
-        
-            self.navVC =[[UINavigationController alloc] initWithRootViewController:frontVC];
-            break;
-        }
-        case 1:
-        {
 //            [self checkUserIsInClass];
             TK_CommentViewController *frontVC=[[TK_CommentViewController alloc] initWithNibName:@"TK_CommentViewController" bundle:nil];
             self.navVC =[[UINavigationController alloc] initWithRootViewController:frontVC];
             break;
         }
-        case 2:
+        case 1:
         {
             TK_CurrentLocationViewController *frontVC=[[TK_CurrentLocationViewController alloc] initWithNibName:@"TK_CurrentLocationViewController" bundle:nil];
         
             self.navVC =[[UINavigationController alloc] initWithRootViewController:frontVC];
             break;
         }
-        case 3:
+        case 2:
         {
             TK_OnlineViewController *front =[[TK_OnlineViewController alloc] initWithNibName:@"TK_OnlineViewController" bundle:nil];
             self.navVC =[[UINavigationController alloc] initWithRootViewController:front];
             break;
         }
-        case 4:
+        case 3:
         {
             TK_ReqVoteViewController *reqVC =[[TK_ReqVoteViewController alloc] initWithNibName:@"TK_ReqVoteViewController" bundle:nil];
             self.navVC =[[UINavigationController alloc] initWithRootViewController:reqVC];
             break;
         }
-        case 5:
+        case 4:
         {
+            // ble
+            TK_ActAsBeaconViewController *front =[[TK_ActAsBeaconViewController alloc] initWithNibName:@"TK_ActAsBeaconViewController" bundle:nil];
+            self.navVC =[[UINavigationController alloc] initWithRootViewController:front];
+        
             break;
         }
-        case 6:
+        case 5:
         {
         
             [self showLoginViewController];
             return;
+            break;
         }
         default:
             break;
@@ -137,13 +140,8 @@
                 }
                 case 3:
                 {
-                    break;
-                }
-                case 4:
-                {
                     [self showLoginViewController];
                     return;
-                    break;
                 }
                 default:
                     break;
@@ -168,9 +166,17 @@
 {
     self.menuViewController =[[TK_MenuViewController alloc] initWithNibName:@"TK_MenuViewController" bundle:nil];
     
-    TK_UserCourseViewController *frontVC=[[TK_UserCourseViewController alloc] initWithNibName:@"TK_UserCourseViewController" bundle:nil];
-    
-    self.navVC =[[UINavigationController alloc] initWithRootViewController:frontVC];
+    if ([plistModel UserIsAdmin])
+    {
+        TK_CommentViewController *frontVC =  [[TK_CommentViewController alloc] initWithNibName:@"TK_CommentViewController" bundle:nil];
+     self.navVC =[[UINavigationController alloc] initWithRootViewController:frontVC];
+    }
+    else
+    {
+        TK_UserCourseViewController *frontVC=[[TK_UserCourseViewController alloc] initWithNibName:@"TK_UserCourseViewController" bundle:nil];
+        self.navVC =[[UINavigationController alloc] initWithRootViewController:frontVC];
+    }
+
     
     self.revealViewController =[PKRevealController revealControllerWithFrontViewController:self.navVC leftViewController:self.menuViewController];
     
@@ -180,6 +186,7 @@
 }
 -(void) showLoginViewController
 {
+    plistModel.plistDict = [[NSMutableDictionary alloc] init];
     TK_LoginViewController *loginVC =[[TK_LoginViewController alloc] initWithNibName:@"TK_LoginViewController" bundle:nil];
     self.navVC = [[UINavigationController alloc] initWithRootViewController:loginVC];
     self.window.rootViewController =self.navVC;
@@ -191,6 +198,30 @@
     else
         [self.revealViewController showViewController:self.revealViewController.frontViewController];
     
+}
+-(void) showVoteViewController: (NSNotification *) noti
+{
+    plistModel = [TK_PlistModel shareInstance];
+    if(![([plistModel loadUserInfo][kstu_id]) isEqualToString:@""])
+    {
+        if([plistModel UserIsAdmin])
+            return;
+        TK_VoteViewController *frontVC =[[TK_VoteViewController alloc] initWithNibName:@"TK_VoteViewController" bundle:nil];
+        frontVC.dict = (NSDictionary *)[noti object];
+        self.navVC =[[UINavigationController alloc] initWithRootViewController:frontVC];
+        self.window.rootViewController =self.navVC;
+    }
+    
+}
+- (void) endVoteViewController : (NSNotification *) noti
+{
+    plistModel = [TK_PlistModel shareInstance];
+    if(![([plistModel loadUserInfo][kstu_id]) isEqualToString:@""])
+    {
+        if([plistModel UserIsAdmin])
+            return;
+        [self showRevalViewController];
+    }
 }
 - (void)applicationWillResignActive:(UIApplication *)application
 {

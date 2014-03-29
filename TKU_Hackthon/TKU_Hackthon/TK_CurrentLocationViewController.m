@@ -36,6 +36,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title =@"你現在的位置";
+    
     count =0;
     userInRoom =@"NO";
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userLocation:) name:kUserIsInClass object:nil];
@@ -86,8 +88,14 @@
 -(void) userLocation: (NSNotification *) noti
 {
     NSDictionary *dict =(NSDictionary *)[noti object];
+    if([dict[@"distance"] floatValue] < -0.1)
+    {
+        userInRoom =@"未知位置";
+        locationLabel.text =[NSString stringWithFormat:@"%@",userInRoom];
+        return;
+    }
      userInRoom =dict[@"room"];
-    locationLabel.text =[NSString stringWithFormat:@"你現在在:%@",dict[@"room"]];
+    locationLabel.text =[NSString stringWithFormat:@"你現在在:%@",userInRoom];
 
 }
 
