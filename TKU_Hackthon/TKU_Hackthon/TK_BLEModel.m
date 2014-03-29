@@ -65,7 +65,7 @@
      */
     [beacons enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         CLBeacon *beacon =(CLBeacon * )obj;
-        if(beacon.accuracy > -1 && beacon.accuracy< 3.5)
+        if(beacon.accuracy< 3.5)
         {
             if(count ==1)
             {

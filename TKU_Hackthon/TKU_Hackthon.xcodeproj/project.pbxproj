@@ -41,6 +41,7 @@
 		D07CFC9118E65E48000E45F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D07CFC9018E65E48000E45F7 /* main.m */; };
 		D07CFC9518E65E48000E45F7 /* TKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D07CFC9418E65E48000E45F7 /* TKAppDelegate.m */; };
 		D07CFC9D18E65E48000E45F7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D07CFC9C18E65E48000E45F7 /* Images.xcassets */; };
+		D0D4EC6718E6BF2E00F2D2F0 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0D4EC6618E6BF2D00F2D2F0 /* MediaPlayer.framework */; };
 		D0D96D6218E65EF40084DFF5 /* TK_BLEModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D96D6118E65EF40084DFF5 /* TK_BLEModel.m */; };
 		D0D96D6518E65F1A0084DFF5 /* TK_WebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D96D6418E65F1A0084DFF5 /* TK_WebSocket.m */; };
 /* End PBXBuildFile section */
@@ -104,6 +105,7 @@
 		D07CFC9418E65E48000E45F7 /* TKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKAppDelegate.m; sourceTree = "<group>"; };
 		D07CFC9C18E65E48000E45F7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D07CFCA318E65E48000E45F7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		D0D4EC6618E6BF2D00F2D2F0 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		D0D96D6018E65EF40084DFF5 /* TK_BLEModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_BLEModel.h; sourceTree = "<group>"; };
 		D0D96D6118E65EF40084DFF5 /* TK_BLEModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_BLEModel.m; sourceTree = "<group>"; };
 		D0D96D6318E65F1A0084DFF5 /* TK_WebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_WebSocket.h; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0D4EC6718E6BF2E00F2D2F0 /* MediaPlayer.framework in Frameworks */,
 				D03CE82618E6625A007372AC /* libxml2.2.dylib in Frameworks */,
 				D03CE82418E66253007372AC /* libxml2.dylib in Frameworks */,
 				D07CFC8718E65E48000E45F7 /* CoreGraphics.framework in Frameworks */,
@@ -248,6 +251,7 @@
 		D07CFC8318E65E48000E45F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D0D4EC6618E6BF2D00F2D2F0 /* MediaPlayer.framework */,
 				D03CE82518E6625A007372AC /* libxml2.2.dylib */,
 				D03CE82318E66253007372AC /* libxml2.dylib */,
 				D07CFC8418E65E48000E45F7 /* Foundation.framework */,

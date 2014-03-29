@@ -8,11 +8,14 @@
 
 #import "TK_WebSocket.h"
 #import "TK_PlistModel.h"
+#import <AVFoundation/AVFoundation.h>
+#import <MediaPlayer/MediaPlayer.h>
 
 @implementation TK_WebSocket
 {
     TK_PlistModel *plistModel;
     NSMutableArray *rangeArray;
+    NSString *userInRoom;
 }
 +(instancetype) shareInstance
 {
@@ -30,6 +33,7 @@
     {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userLocation:) name:kUserIsInClass object:nil];
         rangeArray =[[NSMutableArray alloc] init];
+        userInRoom = @"NO";
     }
     return self;
 }
@@ -43,8 +47,24 @@
 -(void) userLocation: (NSNotification *) noti
 {
     NSDictionary *dict =(NSDictionary *)[noti object];
+    if([dict[@"distance"] floatValue] < -0.5)
+    {
+        userInRoom = @"NOS";
+        [self.socketIO disconnect];
+    }
+    else
+    {
+        userInRoom =dict[@"room"];
+        if(!self.socketIO.isConnected)
+        {
+            [self connectToServer];
+        MPMusicPlayerController *player =[[MPMusicPlayerController alloc] init];
+        player.volume=0.0;
+
     
-    NSLog(@"%@",dict);
+        }
+    }
+    NSLog(@"%@",userInRoom);
     /*
     if(rangeArray.count==0)
        [rangeArray addObject:dict];
