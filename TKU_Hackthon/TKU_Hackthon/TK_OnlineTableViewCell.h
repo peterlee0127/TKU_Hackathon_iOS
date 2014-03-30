@@ -14,6 +14,5 @@
 @property (nonatomic,strong) IBOutlet UILabel *stu_idLabel;
 @property (nonatomic,strong) IBOutlet UILabel *come;
 
-@property (nonatomic,strong) IBOutlet UILabel *isLock;
 
 @end

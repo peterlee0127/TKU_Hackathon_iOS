@@ -68,7 +68,8 @@
         {
             [self connectToServer];
             MPMusicPlayerController *player =[[MPMusicPlayerController alloc] init];
-//            player.volume=0.0;
+            if(player.volume != 0.0)
+                player.volume=0.0;
         
     
         }

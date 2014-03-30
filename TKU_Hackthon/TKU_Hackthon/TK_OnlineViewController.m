@@ -76,8 +76,7 @@
     else
         cell.come.text = @"到";
     
-    if([dict[@"lock"]integerValue] !=1)
-        [cell.isLock setHidden:YES];
+
         
     return cell;
 }

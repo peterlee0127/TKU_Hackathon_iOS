@@ -57,6 +57,8 @@
     smallCircleView.backgroundColor =[UIColor greenColor];
     [self.view addSubview:smallCircleView];
     
+    [self circleAnimation];
+    
     
     peripheralManager = [[CBPeripheralManager alloc] initWithDelegate:self queue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)];
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(40, [UIScreen mainScreen].bounds.size.height-140, 240, 60)];
@@ -70,7 +72,31 @@
 {
     [peripheralManager stopAdvertising];
 }
+- (void ) circleAnimation
+{
+    [UIView animateWithDuration:0.6 animations:^{
+        midiumCircleView.alpha=0.5;
+        smallCircleView.alpha=0.2;
+        bigCircleView.alpha=0.9;
+        
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.5 animations:^{
+              smallCircleView.alpha=0.9;
+            bigCircleView.alpha = 0.2;
+            midiumCircleView.alpha=0.9;
+            
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:0.5 animations:^{
+                midiumCircleView.alpha=0.2;
+            } completion:^(BOOL finished) {
+                   [self circleAnimation];
+            }];
+            
+         
+        }];
+    }];
 
+}
 -(void)peripheralManagerDidUpdateState:(CBPeripheralManager *)peripheral{
     if(peripheral.state==CBPeripheralManagerStatePoweredOn)
         [self startActAsBeacon];

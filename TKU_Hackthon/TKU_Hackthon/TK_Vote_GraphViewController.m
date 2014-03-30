@@ -36,7 +36,7 @@
     apiModel = [TK_APIModel shareInstance];
     [self downloadVote];
     
-    self.tableView =[[UITableView alloc] initWithFrame:CGRectMake(0, 0, 320, self.view.frame.size.height-80) style:UITableViewStylePlain];
+    self.tableView =[[UITableView alloc] initWithFrame:self.tableView.frame style:UITableViewStylePlain];
     [self.tableView registerNib:[UINib nibWithNibName:@"TK_Vote_GraphTableViewCell" bundle:nil] forCellReuseIdentifier:@"GraphCell"];
     self.tableView.delegate=self;
     self.tableView.dataSource=self;
