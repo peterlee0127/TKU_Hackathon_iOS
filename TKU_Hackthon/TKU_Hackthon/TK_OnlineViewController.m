@@ -46,6 +46,7 @@
     UIBarButtonItem *right =[[UIBarButtonItem alloc] initWithTitle:@"重新整理" style:UIBarButtonItemStylePlain target:self action:@selector(downloadOnlinceStudent)];
     self.navigationItem.rightBarButtonItem = right;
     
+    [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(downloadOnlinceStudent) userInfo:nil repeats:YES];
     // Do any additional setup after loading the view from its nib.
 }
 -(void) downloadOnlinceStudent
@@ -75,6 +76,9 @@
     else
         cell.come.text = @"到";
     
+    if([dict[@"lock"]integerValue] !=1)
+        [cell.isLock setHidden:YES];
+        
     return cell;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

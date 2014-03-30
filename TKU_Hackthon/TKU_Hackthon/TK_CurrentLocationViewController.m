@@ -66,7 +66,6 @@
     locationLabel.userInteractionEnabled=YES;
     [locationLabel addGestureRecognizer:tap];
 
-
     // Do any additional setup after loading the view from its nib.
 }
 -(void) sayLocation
@@ -74,16 +73,17 @@
     if([userInRoom isEqualToString:@"NO"])
         return;
 
-    
-    MPMusicPlayerController *player =[[MPMusicPlayerController alloc] init];
-    if(player.volume<0.3)
-        player.volume=0.4;
-    
-   
-    AVSpeechSynthesizer *syn=[[AVSpeechSynthesizer alloc] init];
-    AVSpeechUtterance *utt=[AVSpeechUtterance speechUtteranceWithString:[NSString stringWithFormat:@"你現在在%@",userInRoom]];
-    [utt setRate:0.15];
-    [syn speakUtterance:utt];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        MPMusicPlayerController *player =[[MPMusicPlayerController alloc] init];
+        if(player.volume<0.3)
+            player.volume=0.4;
+        
+        AVSpeechSynthesizer *syn=[[AVSpeechSynthesizer alloc] init];
+        AVSpeechUtterance *utt=[AVSpeechUtterance speechUtteranceWithString:[NSString stringWithFormat:@"你的位置 %@",userInRoom]];
+        [utt setRate:0.15];
+        [syn speakUtterance:utt];
+    });
+  
 }
 -(void) userLocation: (NSNotification *) noti
 {
@@ -95,7 +95,7 @@
         return;
     }
      userInRoom =dict[@"room"];
-    locationLabel.text =[NSString stringWithFormat:@"你現在在:%@",userInRoom];
+    locationLabel.text =[NSString stringWithFormat:@"你的位置:%@",userInRoom];
 
 }
 

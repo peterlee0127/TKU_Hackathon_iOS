@@ -36,11 +36,19 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="已鎖定" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXU-vs-yBl">
+                        <rect key="frame" x="8" y="49" width="78" height="41"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.82282162410000004" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" red="0.82745105029999999" green="0.77254909279999995" blue="0.67450982329999998" alpha="1" colorSpace="deviceRGB"/>
             </tableViewCellContentView>
             <connections>
                 <outlet property="come" destination="4HO-Wg-zPJ" id="x5M-5o-4ka"/>
+                <outlet property="isLock" destination="EXU-vs-yBl" id="YPx-Zg-HXE"/>
                 <outlet property="nameLabel" destination="O2d-La-Vzo" id="mAM-nk-0Vz"/>
                 <outlet property="stu_idLabel" destination="NUF-xe-SLZ" id="s9e-zv-MHZ"/>
             </connections>

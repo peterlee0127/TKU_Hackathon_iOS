@@ -33,7 +33,7 @@
     self.window =[[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
     plistModel = [TK_PlistModel shareInstance];
-    if(![([plistModel loadUserInfo][kstu_id]) isEqualToString:@""])
+    if( [plistModel loadUserCourse].count>0  || [plistModel UserIsAdmin])
     {
         // already login
         [self showRevalViewController];
