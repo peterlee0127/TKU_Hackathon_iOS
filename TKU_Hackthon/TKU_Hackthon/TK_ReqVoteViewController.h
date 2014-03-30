@@ -8,6 +8,6 @@
 
 #import "TK_TopViewController.h"
 
-@interface TK_ReqVoteViewController : TK_TopViewController
+@interface TK_ReqVoteViewController : TK_TopViewController <UIAlertViewDelegate>
 
 @end

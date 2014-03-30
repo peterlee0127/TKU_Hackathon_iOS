@@ -6,16 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TKU_Hackthon/TK_WebSocket.m"
-            timestampString = "417805218.01197"
+            filePath = "TKU_Hackthon/TK_BLEModel.m"
+            timestampString = "417822231.963742"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
-            landmarkName = "-socketIO:didReceiveEvent:"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "-locationManager:didRangeBeacons:inRegion:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TKU_Hackthon/TK_WebSocket.m"
-            timestampString = "417807964.231685"
+            filePath = "TKU_Hackthon/TKAppDelegate.m"
+            timestampString = "417823481.454116"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
-            landmarkName = "-socketIO:didReceiveEvent:"
+            startingLineNumber = "204"
+            endingLineNumber = "204"
+            landmarkName = "-showVoteViewController:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TKU_Hackthon/TKAppDelegate.m"
+            timestampString = "417823569.227204"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "207"
+            endingLineNumber = "207"
+            landmarkName = "-showVoteViewController:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

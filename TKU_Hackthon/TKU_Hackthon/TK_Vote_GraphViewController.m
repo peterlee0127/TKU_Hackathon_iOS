@@ -31,6 +31,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title =@"投票結果";
+    
     apiModel = [TK_APIModel shareInstance];
     [self downloadVote];
     

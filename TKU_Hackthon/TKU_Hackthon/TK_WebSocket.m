@@ -133,7 +133,7 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:kstart_Vote object:dict];
     
     }
-    else if([packet.name isEqualToString:@"end_vote"])
+    else if([packet.name isEqualToString:@"voting_res"])
     {
         NSData *data = [packet.data dataUsingEncoding:NSUTF8StringEncoding];
         id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
@@ -142,7 +142,7 @@
         
         NSDictionary *dict =json[@"args"][0];
         
-        [[NSNotificationCenter defaultCenter] postNotificationName:kend_vote object:dict];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kvoting_res object:dict];
         
     }
     else if([packet.name isEqualToString:@"vote_result"])

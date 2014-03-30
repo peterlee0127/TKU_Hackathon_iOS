@@ -9,6 +9,7 @@
 #import "TK_VoteViewController.h"
 #import "TK_WebSocket.h"
 #import "TK_PlistModel.h"
+#import "TK_APIModel.h"
 
 @interface TK_VoteViewController ()
 {
@@ -40,22 +41,22 @@
 }
 -(IBAction) chooseA:(id)sender
 {
-    self.chooseLabel.text = [NSString stringWithFormat:@"你選擇了:A"];
+    self.title = [NSString stringWithFormat:@"你選擇了:A"];
     ans = @"A";
 }
 -(IBAction) chooseB:(id)sender
 {
-    self.chooseLabel.text = [NSString stringWithFormat:@"你選擇了:B"];
+    self.title= [NSString stringWithFormat:@"你選擇了:B"];
      ans = @"B";
 }
 -(IBAction) chooseC:(id)sender
 {
-    self.chooseLabel.text = [NSString stringWithFormat:@"你選擇了:C"];
+    self.title = [NSString stringWithFormat:@"你選擇了:C"];
      ans = @"C";
 }
 -(IBAction) chooseD:(id)sender
 {
-    self.chooseLabel.text = [NSString stringWithFormat:@"你選擇了:D"];
+    self.title= [NSString stringWithFormat:@"你選擇了:D"];
      ans = @"D";
 }
 -(void) viewWillAppear:(BOOL)animated
@@ -69,13 +70,15 @@
             if([ans isEqualToString:@""])
                 return;
         
-        
+            TK_APIModel *api =[TK_APIModel shareInstance];
+            NSString *class =api.classArray[0][@"_id"];
             NSString *stu_id=[plistModel loadUserInfo][kstu_id];
             NSDictionary *dict =[NSDictionary dictionaryWithObjectsAndKeys:
                                 stu_id,@"stu_id",
-                                 ans,@"answer", nil];
-            [websocket.socketIO sendEvent:@"Voting" withData:dict];
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"endVoteViewController" object:nil];
+                                 ans,@"answer",
+                                 class,@"class_id", nil];
+            [websocket.socketIO sendEvent:@"voting" withData:dict];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kend_vote object:nil];
         }
 }
 

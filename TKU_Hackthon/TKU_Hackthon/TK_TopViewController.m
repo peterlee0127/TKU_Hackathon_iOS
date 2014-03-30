@@ -36,8 +36,6 @@
     
     self.navigationController.navigationBar.translucent = NO;
     
-    UIImage *image = [UIImage imageNamed:@"nav.png"];
-    [[UINavigationBar appearance] setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
     
         // Setting All NavgationBar Title
     [[UINavigationBar appearance] setTitleTextAttributes:
