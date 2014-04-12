@@ -128,14 +128,14 @@
 		D03CE83818E671BF007372AC /* TK_LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TK_LoginViewController.h; sourceTree = "<group>"; };
 		D03CE83918E671BF007372AC /* TK_LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TK_LoginViewController.m; sourceTree = "<group>"; };
 		D03CE83A18E671BF007372AC /* TK_LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TK_LoginViewController.xib; sourceTree = "<group>"; };
-		D07CFC8118E65E48000E45F7 /* TKU_Hackthon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TKU_Hackthon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D07CFC8118E65E48000E45F7 /* TKU_Hackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TKU_Hackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D07CFC8418E65E48000E45F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D07CFC8618E65E48000E45F7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		D07CFC8818E65E48000E45F7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		D07CFC8C18E65E48000E45F7 /* TKU_Hackthon-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TKU_Hackthon-Info.plist"; sourceTree = "<group>"; };
+		D07CFC8C18E65E48000E45F7 /* TKU_Hackathon-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TKU_Hackathon-Info.plist"; sourceTree = "<group>"; };
 		D07CFC8E18E65E48000E45F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D07CFC9018E65E48000E45F7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D07CFC9218E65E48000E45F7 /* TKU_Hackthon-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TKU_Hackthon-Prefix.pch"; sourceTree = "<group>"; };
+		D07CFC9218E65E48000E45F7 /* TKU_Hackathon-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TKU_Hackathon-Prefix.pch"; sourceTree = "<group>"; };
 		D07CFC9318E65E48000E45F7 /* TKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKAppDelegate.h; sourceTree = "<group>"; };
 		D07CFC9418E65E48000E45F7 /* TKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKAppDelegate.m; sourceTree = "<group>"; };
 		D07CFC9C18E65E48000E45F7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -322,7 +322,7 @@
 		D07CFC7818E65E48000E45F7 = {
 			isa = PBXGroup;
 			children = (
-				D07CFC8A18E65E48000E45F7 /* TKU_Hackthon */,
+				D07CFC8A18E65E48000E45F7 /* TKU_Hackathon */,
 				D07CFC8318E65E48000E45F7 /* Frameworks */,
 				D07CFC8218E65E48000E45F7 /* Products */,
 				A49FA5AEE6A146CD8D224B41 /* Pods.xcconfig */,
@@ -332,7 +332,7 @@
 		D07CFC8218E65E48000E45F7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D07CFC8118E65E48000E45F7 /* TKU_Hackthon.app */,
+				D07CFC8118E65E48000E45F7 /* TKU_Hackathon.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -352,7 +352,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D07CFC8A18E65E48000E45F7 /* TKU_Hackthon */ = {
+		D07CFC8A18E65E48000E45F7 /* TKU_Hackathon */ = {
 			isa = PBXGroup;
 			children = (
 				D03CE80718E661A1007372AC /* Library */,
@@ -364,16 +364,17 @@
 				D07CFC9C18E65E48000E45F7 /* Images.xcassets */,
 				D07CFC8B18E65E48000E45F7 /* Supporting Files */,
 			);
+			name = TKU_Hackathon;
 			path = TKU_Hackthon;
 			sourceTree = "<group>";
 		};
 		D07CFC8B18E65E48000E45F7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D07CFC8C18E65E48000E45F7 /* TKU_Hackthon-Info.plist */,
+				D07CFC8C18E65E48000E45F7 /* TKU_Hackathon-Info.plist */,
 				D07CFC8D18E65E48000E45F7 /* InfoPlist.strings */,
 				D07CFC9018E65E48000E45F7 /* main.m */,
-				D07CFC9218E65E48000E45F7 /* TKU_Hackthon-Prefix.pch */,
+				D07CFC9218E65E48000E45F7 /* TKU_Hackathon-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -461,9 +462,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D07CFC8018E65E48000E45F7 /* TKU_Hackthon */ = {
+		D07CFC8018E65E48000E45F7 /* TKU_Hackathon */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D07CFCB318E65E48000E45F7 /* Build configuration list for PBXNativeTarget "TKU_Hackthon" */;
+			buildConfigurationList = D07CFCB318E65E48000E45F7 /* Build configuration list for PBXNativeTarget "TKU_Hackathon" */;
 			buildPhases = (
 				FAE2365C83344EA7AA5D6187 /* Check Pods Manifest.lock */,
 				D07CFC7D18E65E48000E45F7 /* Sources */,
@@ -475,9 +476,9 @@
 			);
 			dependencies = (
 			);
-			name = TKU_Hackthon;
+			name = TKU_Hackathon;
 			productName = TKU_Hackthon;
-			productReference = D07CFC8118E65E48000E45F7 /* TKU_Hackthon.app */;
+			productReference = D07CFC8118E65E48000E45F7 /* TKU_Hackathon.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -499,7 +500,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D07CFC7C18E65E48000E45F7 /* Build configuration list for PBXProject "TKU_Hackthon" */;
+			buildConfigurationList = D07CFC7C18E65E48000E45F7 /* Build configuration list for PBXProject "TKU_Hackathon" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -512,7 +513,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D07CFC8018E65E48000E45F7 /* TKU_Hackthon */,
+				D07CFC8018E65E48000E45F7 /* TKU_Hackathon */,
 			);
 		};
 /* End PBXProject section */
@@ -734,7 +735,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TKU_Hackthon/TKU_Hackthon-Prefix.pch";
+				GCC_PREFIX_HEADER = "TKU_Hackthon/TKU_Hackathon-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"\"${PODS_ROOT}/Headers\"",
 					"\"${PODS_ROOT}/Headers/AFNetworking\"",
@@ -744,8 +745,8 @@
 					"\"${PODS_ROOT}/Headers/SocketRocket\"",
 					/usr/include/libxml2,
 				);
-				INFOPLIST_FILE = "TKU_Hackthon/TKU_Hackthon-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "TKU_Hackthon/TKU_Hackathon-Info.plist";
+				PRODUCT_NAME = TKU_Hackathon;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -757,7 +758,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TKU_Hackthon/TKU_Hackthon-Prefix.pch";
+				GCC_PREFIX_HEADER = "TKU_Hackthon/TKU_Hackathon-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"\"${PODS_ROOT}/Headers\"",
 					"\"${PODS_ROOT}/Headers/AFNetworking\"",
@@ -767,8 +768,8 @@
 					"\"${PODS_ROOT}/Headers/SocketRocket\"",
 					/usr/include/libxml2,
 				);
-				INFOPLIST_FILE = "TKU_Hackthon/TKU_Hackthon-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "TKU_Hackthon/TKU_Hackathon-Info.plist";
+				PRODUCT_NAME = TKU_Hackathon;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -776,7 +777,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D07CFC7C18E65E48000E45F7 /* Build configuration list for PBXProject "TKU_Hackthon" */ = {
+		D07CFC7C18E65E48000E45F7 /* Build configuration list for PBXProject "TKU_Hackathon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D07CFCB118E65E48000E45F7 /* Debug */,
@@ -785,7 +786,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D07CFCB318E65E48000E45F7 /* Build configuration list for PBXNativeTarget "TKU_Hackthon" */ = {
+		D07CFCB318E65E48000E45F7 /* Build configuration list for PBXNativeTarget "TKU_Hackathon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D07CFCB418E65E48000E45F7 /* Debug */,

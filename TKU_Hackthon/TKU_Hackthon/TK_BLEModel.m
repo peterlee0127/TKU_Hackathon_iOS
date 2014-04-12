@@ -64,11 +64,11 @@
      CLProximityNear,
      CLProximityFar
      */
-    [beacons enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        CLBeacon *beacon =(CLBeacon * )obj;
+    if(beacons.count>0)
+    {
+        CLBeacon *beacon =beacons[0];
         if(beacon.accuracy< 15.5)
         {
-        
 //                NSLog(@"%f region:%@",beacon.accuracy,region.identifier);
                 NSDictionary *dict =[NSDictionary dictionaryWithObjectsAndKeys:
                                      region.identifier,@"room",
@@ -81,7 +81,7 @@
         {
         
         }
-    }];
+    }
 }
 -(void)locationManager:(CLLocationManager *)manager rangingBeaconsDidFailForRegion:(CLBeaconRegion *)region withError:(NSError *)error
 {

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D07CFC8018E65E48000E45F7"
-               BuildableName = "TKU_Hackthon.app"
-               BlueprintName = "TKU_Hackthon"
-               ReferencedContainer = "container:TKU_Hackthon.xcodeproj">
+               BuildableName = "TKU_Hackathon.app"
+               BlueprintName = "TKU_Hackathon"
+               ReferencedContainer = "container:TKU_Hackathon.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "D07CFCA118E65E48000E45F7"
                BuildableName = "TKU_HackthonTests.xctest"
                BlueprintName = "TKU_HackthonTests"
-               ReferencedContainer = "container:TKU_Hackthon.xcodeproj">
+               ReferencedContainer = "container:TKU_Hackathon.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D07CFC8018E65E48000E45F7"
-            BuildableName = "TKU_Hackthon.app"
-            BlueprintName = "TKU_Hackthon"
-            ReferencedContainer = "container:TKU_Hackthon.xcodeproj">
+            BuildableName = "TKU_Hackathon.app"
+            BlueprintName = "TKU_Hackathon"
+            ReferencedContainer = "container:TKU_Hackathon.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D07CFC8018E65E48000E45F7"
-            BuildableName = "TKU_Hackthon.app"
-            BlueprintName = "TKU_Hackthon"
-            ReferencedContainer = "container:TKU_Hackthon.xcodeproj">
+            BuildableName = "TKU_Hackathon.app"
+            BlueprintName = "TKU_Hackathon"
+            ReferencedContainer = "container:TKU_Hackathon.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D07CFC8018E65E48000E45F7"
-            BuildableName = "TKU_Hackthon.app"
-            BlueprintName = "TKU_Hackthon"
-            ReferencedContainer = "container:TKU_Hackthon.xcodeproj">
+            BuildableName = "TKU_Hackathon.app"
+            BlueprintName = "TKU_Hackathon"
+            ReferencedContainer = "container:TKU_Hackathon.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
