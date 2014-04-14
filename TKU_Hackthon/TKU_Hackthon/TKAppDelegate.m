@@ -27,7 +27,6 @@
 }
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
     [self setNavigtionAppearAndKVO];
     
     self.window =[[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
@@ -71,7 +70,6 @@
     switch (index) {
         case 0:
         {
-//            [self checkUserIsInClass];
             TK_CommentViewController *frontVC=[[TK_CommentViewController alloc] initWithNibName:@"TK_CommentViewController" bundle:nil];
             self.navVC =[[UINavigationController alloc] initWithRootViewController:frontVC];
             break;

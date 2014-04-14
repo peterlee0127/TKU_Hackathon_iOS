@@ -21,6 +21,9 @@ static  NSString * const defaultPort = @"3000";
 static  NSString * const kShowMenuViewController = @"kShowMenuViewController";
 static  NSString * const defaultFont = @"Helvetica-Light";
 
+
+#pragma mark - Data model
+
 static NSString * const kstu_id = @"stu_id";
 static NSString * const kpassword = @"password";
 static NSString * const kUserIsAdmin = @"kUserIsAdmin";
@@ -29,13 +32,13 @@ static NSString * const kUserIsInClass = @"kUserIsInClass";
 static NSString * const kforceChangeCome = @"kforceChangeCome";
 
 
+#pragma mark - SocketIO NotiKey
+
 static NSString *const kReqVote = @"kReqVote";
 static NSString *const kstart_Vote = @"kstart_Vote";
 static NSString *const kvoting = @"kvoting";
 static NSString *const kvoting_res = @"kvoting_res";
 static NSString *const kend_vote = @"kend_vote";
-
-
 static NSString *const kUserSendChat = @"kUserSendChat";
 static NSString *const kWebSocketIsConnect = @"kWebSocketIsConnect";
 
