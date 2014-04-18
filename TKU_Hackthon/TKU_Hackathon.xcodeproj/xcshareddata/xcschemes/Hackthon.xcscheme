@@ -20,6 +20,20 @@
                ReferencedContainer = "container:TKU_Hackathon.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "NO"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D07CFCA118E65E48000E45F7"
+               BuildableName = "TKU_HackthonTests.xctest"
+               BlueprintName = "TKU_HackthonTests"
+               ReferencedContainer = "container:TKU_Hackathon.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -28,16 +42,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D07CFCA118E65E48000E45F7"
-               BuildableName = "TKU_HackthonTests.xctest"
-               BlueprintName = "TKU_HackthonTests"
-               ReferencedContainer = "container:TKU_Hackathon.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
