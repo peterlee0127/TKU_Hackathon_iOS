@@ -1,3 +1,3 @@
 language: objective-c
 xcode_project: TKU_Hackthon/TKU_Hackathon.xcodeproj  # path to your xcodeproj folder
-xcode_scheme: TKU_Hackathon
+xcode_scheme: peter.com.TKU_Hackathon
