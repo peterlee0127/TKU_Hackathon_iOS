@@ -1,3 +1,0 @@
-language: objective-c
-xcode_project: TKU_Hackathon.xcworkspace # path to your xcodeproj folder
-xcode_scheme: peter.com.TKU-Hackathon
