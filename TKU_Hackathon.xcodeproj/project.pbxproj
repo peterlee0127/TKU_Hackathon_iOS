@@ -750,7 +750,7 @@
 				);
 				INFOPLIST_FILE = "TKU_Hackthon/TKU_Hackathon-Info.plist";
 				PRODUCT_NAME = TKU_Hackathon;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "C0E681F9-0E6D-4BCC-8CB3-7740B07651BF";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -776,7 +776,7 @@
 				);
 				INFOPLIST_FILE = "TKU_Hackthon/TKU_Hackathon-Info.plist";
 				PRODUCT_NAME = TKU_Hackathon;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "C0E681F9-0E6D-4BCC-8CB3-7740B07651BF";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
